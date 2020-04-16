@@ -1,0 +1,392 @@
+function Box.new 0
+push constant 7
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 0
+push constant 0
+pop this 2
+push constant 0
+pop this 1
+push constant 9
+pop this 3
+push constant 60
+pop this 4
+push argument 0
+pop this 5
+push argument 1
+pop this 6
+push pointer 0
+return
+function Box.drawBoundary 4
+push argument 0
+pop pointer 0
+push this 5
+push this 3
+add
+pop local 0
+push this 6
+push this 3
+add
+pop local 1
+push this 5
+push this 4
+add
+push this 3
+sub
+pop local 2
+push this 6
+push this 4
+add
+push this 3
+sub
+pop local 3
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push local 0
+push local 1
+push local 2
+push local 3
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push local 0
+push constant 1
+add
+push local 1
+push constant 1
+add
+push local 2
+push constant 1
+sub
+push local 3
+push constant 1
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Box.drawOrEraseSelector 4
+push argument 0
+pop pointer 0
+push argument 1
+call Screen.setColor 1
+pop temp 0
+push this 5
+push this 3
+push constant 2
+call Math.divide 2
+add
+pop local 0
+push this 6
+push this 3
+push constant 2
+call Math.divide 2
+add
+pop local 1
+push this 5
+push this 4
+add
+push this 3
+push constant 2
+call Math.divide 2
+sub
+pop local 2
+push local 1
+pop local 3
+push local 0
+push local 1
+push local 2
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push local 1
+push constant 1
+add
+push local 2
+push local 3
+push constant 1
+add
+call Screen.drawLine 4
+pop temp 0
+push local 0
+pop local 2
+push this 6
+push this 4
+add
+push this 3
+push constant 2
+call Math.divide 2
+sub
+pop local 3
+push local 0
+push local 1
+push local 2
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+push local 1
+push local 2
+push constant 1
+add
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push this 5
+push this 4
+add
+push this 3
+push constant 2
+call Math.divide 2
+sub
+pop local 0
+push this 6
+push this 4
+add
+push this 3
+push constant 2
+call Math.divide 2
+sub
+pop local 1
+push this 5
+push this 3
+push constant 2
+call Math.divide 2
+add
+pop local 2
+push local 1
+pop local 3
+push local 0
+push local 1
+push local 2
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push local 1
+push constant 1
+sub
+push local 2
+push local 3
+push constant 1
+sub
+call Screen.drawLine 4
+pop temp 0
+push local 0
+pop local 2
+push this 6
+push this 3
+push constant 2
+call Math.divide 2
+add
+pop local 3
+push local 0
+push local 1
+push local 2
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+sub
+push local 1
+push local 2
+push constant 1
+sub
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Box.select 0
+push argument 0
+pop pointer 0
+push pointer 0
+push constant 0
+not
+call Box.drawOrEraseSelector 2
+pop temp 0
+push constant 0
+return
+function Box.unselect 0
+push argument 0
+pop pointer 0
+push pointer 0
+push constant 0
+call Box.drawOrEraseSelector 2
+pop temp 0
+push constant 0
+return
+function Box.drawCross 4
+push argument 0
+pop pointer 0
+push this 2
+push this 1
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+return
+label IF_FALSE0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 5
+push this 3
+add
+push this 3
+push constant 2
+call Math.divide 2
+add
+pop local 0
+push this 6
+push this 3
+add
+push this 3
+push constant 2
+call Math.divide 2
+add
+pop local 1
+push this 5
+push this 4
+add
+push this 3
+sub
+push this 3
+push constant 2
+call Math.divide 2
+sub
+pop local 2
+push this 6
+push this 4
+add
+push this 3
+sub
+push this 3
+push constant 2
+call Math.divide 2
+sub
+pop local 3
+push local 0
+push local 1
+push local 2
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push local 2
+pop local 0
+push this 6
+push this 3
+add
+push this 3
+push constant 2
+call Math.divide 2
+add
+pop local 1
+push this 5
+push this 3
+add
+push this 3
+push constant 2
+call Math.divide 2
+add
+pop local 2
+push local 3
+pop local 3
+push local 0
+push local 1
+push local 2
+push local 3
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+not
+pop this 2
+push this 2
+return
+function Box.drawNought 3
+push argument 0
+pop pointer 0
+push this 2
+push this 1
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+return
+label IF_FALSE0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 5
+push this 4
+push constant 2
+call Math.divide 2
+add
+pop local 0
+push this 6
+push this 4
+push constant 2
+call Math.divide 2
+add
+pop local 1
+push this 4
+push constant 2
+call Math.divide 2
+push this 3
+sub
+push this 3
+push constant 2
+call Math.divide 2
+sub
+pop local 2
+push local 0
+push local 1
+push local 2
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push local 0
+push local 1
+push local 2
+push constant 1
+sub
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+not
+pop this 1
+push this 1
+return
+function Box.isCross 0
+push argument 0
+pop pointer 0
+push this 2
+return
+function Box.isNought 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function Box.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

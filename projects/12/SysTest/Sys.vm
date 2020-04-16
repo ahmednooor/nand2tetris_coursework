@@ -1,0 +1,100 @@
+// <-subroutineDec-> init
+function Sys.init 0
+// <-doStatement->
+call Keyboard.init 0
+pop temp 0
+// <-doStatement->
+call Math.init 0
+pop temp 0
+// <-doStatement->
+call Memory.init 0
+pop temp 0
+// <-doStatement->
+call Output.init 0
+pop temp 0
+// <-doStatement->
+call Screen.init 0
+pop temp 0
+// <-doStatement->
+call Main.main 0
+pop temp 0
+// <-doStatement->
+call Sys.halt 0
+pop temp 0
+// <-subroutineDec-> halt
+function Sys.halt 0
+// <-whileStatement->
+label while_label1_2e5b60b38f594e35851696fe4c18c88b
+push constant 1
+neg
+not
+if-goto while_label2_2a0ead9f6ec44c11b308a6060154d58e
+goto while_label1_2e5b60b38f594e35851696fe4c18c88b
+label while_label2_2a0ead9f6ec44c11b308a6060154d58e
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> wait
+function Sys.wait 1
+// <-whileStatement->
+label while_label1_b8f6917f318747e68df2d7d107d98f1b
+push argument 0
+push constant 0
+gt
+not
+if-goto while_label2_748f0afeae284dbfb3d2dd1a4ee448cd
+// <-letStatement->
+push constant 0
+pop local 0
+// <-whileStatement->
+label while_label1_48aa9fca505c4c5ab986dace17c7339b
+push local 0
+push constant 110
+lt
+not
+if-goto while_label2_f3bf2bdcf48445bc88c95fca17ed8b89
+// <-letStatement->
+push local 0
+push constant 1
+add
+pop local 0
+goto while_label1_48aa9fca505c4c5ab986dace17c7339b
+label while_label2_f3bf2bdcf48445bc88c95fca17ed8b89
+// <-letStatement->
+push argument 0
+push constant 1
+sub
+pop argument 0
+goto while_label1_b8f6917f318747e68df2d7d107d98f1b
+label while_label2_748f0afeae284dbfb3d2dd1a4ee448cd
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> error
+function Sys.error 0
+// <-doStatement->
+push constant 0
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+// <-doStatement->
+push constant 3
+call String.new 1
+push constant 69
+call String.appendChar 2
+push constant 82
+call String.appendChar 2
+push constant 82
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+// <-doStatement->
+push argument 0
+call Output.printInt 1
+pop temp 0
+// <-doStatement->
+call Sys.halt 0
+pop temp 0
+// <-returnStatement->
+push constant 0
+return

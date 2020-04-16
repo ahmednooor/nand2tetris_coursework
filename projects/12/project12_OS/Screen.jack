@@ -1,0 +1,463 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Screen.jack
+
+/**
+ * A library of functions for displaying graphics on the screen.
+ * The Hack physical screen consists of 512 rows (indexed 0..511, top to bottom)
+ * of 256 pixels each (indexed 0..255, left to right). The top left pixel on 
+ * the screen is indexed (0,0).
+ */
+class Screen {
+    static Array twoToThe;
+    static boolean color;
+
+    /** Initializes the Screen. */
+    function void init() {
+        let twoToThe = Array.new(16); // 16 is the bit size of an int block
+        let twoToThe[0] = 1;
+        let twoToThe[1] = 2;
+        let twoToThe[2] = 4;
+        let twoToThe[3] = 8;
+        let twoToThe[4] = 16;
+        let twoToThe[5] = 32;
+        let twoToThe[6] = 64;
+        let twoToThe[7] = 128;
+        let twoToThe[8] = 256;
+        let twoToThe[9] = 512;
+        let twoToThe[10] = 1024;
+        let twoToThe[11] = 2048;
+        let twoToThe[12] = 4096;
+        let twoToThe[13] = 8192;
+        let twoToThe[14] = 16384;
+        let twoToThe[15] = 32767 + 1;
+
+        let color = true;
+
+        return;
+    }
+
+    /** Erases the entire screen. */
+    function void clearScreen() {
+        var int address;
+        let address = 16384;
+        while (address < 24576) {
+            do Memory.poke(address, 0);
+            let address = address + 1;
+        }
+        return;
+    }
+
+    /** Sets the current color, to be used for all subsequent drawXXX commands.
+     *  Black is represented by true, white by false. */
+    function void setColor(boolean b) {
+        let color = b;
+        return;
+    }
+
+    /** Draws the (x,y) pixel, using the current color. */
+    function void drawPixel(int x, int y) {
+        var int address, value, twoToTheXmod16;
+        
+        let address = 16384 + ((32 * y) + (x / 16));
+        let value = Memory.peek(address);
+        let twoToTheXmod16 = twoToThe[(x - (16 * (x / 16)))];
+
+        if (color) {
+            let value = value | twoToTheXmod16;
+        }
+        else {
+            let value = value & (~twoToTheXmod16);
+        }
+
+        do Memory.poke(address, value);
+        return;
+    }
+
+    /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
+    function void drawLine(int x1, int y1, int x2, int y2) {
+        var int dx, dy, a, b, diff;
+        
+        let a = 0;
+        let b = 0;
+        let diff = 0;
+        
+        if (x1 = x2) { // vertical line
+            if (y1 < y2) { // top-bottom
+                while (y1 < (y2 + 1)) {
+                    do Screen.drawPixel(x1, y1);
+                    let y1 = y1 + 1;
+                }
+                return;
+            }
+            if (y1 > y2) { // bottom-top
+                while (y1 > (y2 - 1)) {
+                    do Screen.drawPixel(x1, y1);
+                    let y1 = y1 - 1;
+                }
+                return;
+            }
+        }
+        
+        if (y1 = y2) { // horizontal line
+            if (x1 < x2) { // left-right
+                do Screen.drawRectangle(x1, y1, x2, y2);
+                return;
+            }
+            if (x1 > x2) { // right-left
+                do Screen.drawRectangle(x2, y2, x1, y1);
+                return;
+            }
+        }
+
+        if ((x1 = x2) & (y1 = y2)) { // only a dot
+            do Screen.drawPixel(x1, y1);
+            return;
+        }
+
+        if ((x1 < x2) & (y1 > y2)) { // top-right
+            let dx = x2 - x1;
+            let dy = y1 - y2;
+            while ((a < (dx + 1)) & (b < (dy + 1))) {
+                do Screen.drawPixel(x1 + a, y1 - b);
+                if (diff < 0) {
+                    let a = a + 1;
+                    let diff = diff + dy;
+                }
+                else {
+                    let b = b + 1;
+                    let diff = diff - dx;
+                }
+            }
+            return;
+        }
+
+        if ((x1 > x2) & (y1 > y2)) { // top-left
+            let dx = x1 - x2;
+            let dy = y1 - y2;
+            while ((a < (dx + 1)) & (b < (dy + 1))) {
+                do Screen.drawPixel(x1 - a, y1 - b);
+                if (diff < 0) {
+                    let a = a + 1;
+                    let diff = diff + dy;
+                }
+                else {
+                    let b = b + 1;
+                    let diff = diff - dx;
+                }
+            }
+            return;
+        }
+
+        if ((x1 > x2) & (y1 < y2)) { // bottom-left
+            let dx = x1 - x2;
+            let dy = y2 - y1;
+            while ((a < (dx + 1)) & (b < (dy + 1))) {
+                do Screen.drawPixel(x1 - a, y1 + b);
+                if (diff < 0) {
+                    let a = a + 1;
+                    let diff = diff + dy;
+                }
+                else {
+                    let b = b + 1;
+                    let diff = diff - dx;
+                }
+            }
+            return;
+        }
+
+        if ((x1 < x2) & (y1 < y2)) { // bottom-right
+            let dx = x2 - x1;
+            let dy = y2 - y1;
+            while ((a < (dx + 1)) & (b < (dy + 1))) {
+                do Screen.drawPixel(x1 + a, y1 + b);
+                if (diff < 0) {
+                    let a = a + 1;
+                    let diff = diff + dy;
+                }
+                else {
+                    let b = b + 1;
+                    let diff = diff - dx;
+                }
+            }
+            return;
+        }
+
+        return;
+    }
+
+    /** Draws a filled rectangle whose top left corner is (x1, y1)
+     * and bottom right corner is (x2,y2), using the current color. */
+    function void drawRectangle(int x1, int y1, int x2, int y2) {
+        var int numOfWordsPerRow, address, x, y, temp, indexedValue, value;
+        var int xCordIthBitIndex, indexedValueLeft, indexedValueRight;
+        var boolean hasCordsSwaped;
+
+        // below ifs basically make cords such as x1,y1 should be top left and 
+        // x2,y2 should be bottom right so the final process will be done once
+        if (((x1 < x2) & (y1 > y2)) & (~(hasCordsSwaped))) { // top-right
+            let hasCordsSwaped = true;
+            let temp = y1;
+            let y1 = y2;
+            let y2 = temp;
+        }
+        if (((x1 > x2) & (y1 > y2)) & (~(hasCordsSwaped))) { // top-left
+            let hasCordsSwaped = true;
+            let temp = y1;
+            let y1 = y2;
+            let y2 = temp;
+            let temp = x1;
+            let x1 = x2;
+            let x2 = temp;
+        }
+        if (((x1 > x2) & (y1 < y2)) & (~(hasCordsSwaped))) { // bottom-left
+            let hasCordsSwaped = true;
+            let temp = x1;
+            let x1 = x2;
+            let x2 = temp;
+        }
+        if (((x1 < x2) & (y1 < y2)) & (~(hasCordsSwaped))) { // bottom-right
+            let hasCordsSwaped = true;
+            let x1 = x1;
+            let y1 = y1;
+        }
+
+        // if both x cords are in the same 16-bit word
+        if ((16384 + ((32 * y) + (x1 / 16))) = (16384 + ((32 * y) + (x2 / 16)))) {
+            let x = x1;
+            let y = y1;
+            let xCordIthBitIndex = (x - ((x / 16) * 16));
+            let temp = (x2 - ((x2 / 16) * 16)) + 1; // ith bit of x2
+            let indexedValue = 0;
+            
+            while (xCordIthBitIndex < temp) {
+                let indexedValue = indexedValue + twoToThe[xCordIthBitIndex];
+                let xCordIthBitIndex = xCordIthBitIndex + 1;
+            }
+
+            let address = 16384 + ((32 * y) + (x / 16));
+            while (y < (y2 + 1)) {
+                let value = Memory.peek(address);
+                if (color) {
+                    let value = value | indexedValue;
+                }
+                else {
+                    let value = value & (~indexedValue);
+                }
+                do Memory.poke(address, value);
+                let y = y + 1;
+                let address = address + 32;
+            }
+            
+            return;
+        }
+
+        let numOfWordsPerRow = (x2 / 16) - (x1 / 16) + 1;
+        let y = y1;
+
+        let x = x1;
+        let xCordIthBitIndex = (x - ((x / 16) * 16));
+        let indexedValueLeft = 0;
+        
+        while (xCordIthBitIndex < 16) {
+            let indexedValueLeft = indexedValueLeft + twoToThe[xCordIthBitIndex];
+            let xCordIthBitIndex = xCordIthBitIndex + 1;
+        }
+
+        let x = x2;
+        let xCordIthBitIndex = (x - ((x / 16) * 16));
+        let indexedValueRight = 0;
+        
+        while (xCordIthBitIndex > -1) {
+            let indexedValueRight = indexedValueRight + twoToThe[xCordIthBitIndex];
+            let xCordIthBitIndex = xCordIthBitIndex - 1;
+        }
+
+        let x = x1;
+        let y = y1;
+        let address = 16384 + ((32 * y) + (x / 16));
+        while (y < (y2 + 1)) {
+            let temp = 0;
+            while (temp < numOfWordsPerRow) {
+                if (temp = 0) {
+                    let value = Memory.peek(address);
+                    if (color) {
+                        let value = value | indexedValueLeft;
+                    }
+                    else {
+                        let value = value & (~indexedValueLeft);
+                    }
+                    do Memory.poke(address, value);
+                }
+                if (temp = (numOfWordsPerRow - 1)) {
+                    let value = Memory.peek(address);
+                    if (color) {
+                        let value = value | indexedValueRight;
+                    }
+                    else {
+                        let value = value & (~indexedValueRight);
+                    }
+                    do Memory.poke(address, value);
+                }
+                if ((temp > 0) & (temp < (numOfWordsPerRow - 1))) {
+                    do Memory.poke(address, color);
+                }
+                let address = address + 1;
+                let temp = temp + 1;
+            }
+            let y = y + 1;
+            let address = (address + 32) - numOfWordsPerRow;
+        }
+
+        return;
+    }
+
+    /** Draws a filled circle of radius r<=181 around (x,y), using the current color. */
+    function void drawCircle(int x, int y, int r) {
+        var int dy, sqrtOfrSqrMinDySqr;
+        let dy = -r;
+        
+        while (dy < (r + 1)) {
+            let sqrtOfrSqrMinDySqr = Math.sqrt(Math.multiply(r, r) - Math.multiply(dy, dy));
+            do Screen.drawLine(x - sqrtOfrSqrMinDySqr, y + dy, x + sqrtOfrSqrMinDySqr, y + dy);
+            let dy = dy + 1;
+        }
+        
+        return;
+    }
+
+    // Another implementation of drawRectangle
+    /** Draws a filled rectangle whose top left corner is (x1, y1)
+     * and bottom right corner is (x2,y2), using the current color. */
+    // function void drawRectangle(int x1, int y1, int x2, int y2) {
+    //     var int numOfWordsPerRow, address, x, y, temp, indexedValue, value;
+    //     var int xCordIthBitIndex;
+    //     var boolean hasCordsSwaped;
+
+    //     // below ifs basically make cords such as x1,y1 should be top left and 
+    //     // x2,y2 should be bottom right so the final process will be done once
+    //     if (((x1 < x2) & (y1 > y2)) & (~(hasCordsSwaped))) { // top-right
+    //         let hasCordsSwaped = true;
+    //         let temp = y1;
+    //         let y1 = y2;
+    //         let y2 = temp;
+    //     }
+    //     if (((x1 > x2) & (y1 > y2)) & (~(hasCordsSwaped))) { // top-left
+    //         let hasCordsSwaped = true;
+    //         let temp = y1;
+    //         let y1 = y2;
+    //         let y2 = temp;
+    //         let temp = x1;
+    //         let x1 = x2;
+    //         let x2 = temp;
+    //     }
+    //     if (((x1 > x2) & (y1 < y2)) & (~(hasCordsSwaped))) { // bottom-left
+    //         let hasCordsSwaped = true;
+    //         let temp = x1;
+    //         let x1 = x2;
+    //         let x2 = temp;
+    //     }
+    //     if (((x1 < x2) & (y1 < y2)) & (~(hasCordsSwaped))) { // bottom-right
+    //         let hasCordsSwaped = true;
+    //         let x1 = x1;
+    //         let y1 = y1;
+    //     }
+
+    //     // if both x cords are in the same 16-bit word
+    //     if ((16384 + ((32 * y) + (x1 / 16))) = (16384 + ((32 * y) + (x2 / 16)))) {
+    //         let x = x1;
+    //         let y = y1;
+    //         let xCordIthBitIndex = (x - ((x / 16) * 16));
+    //         let temp = (x2 - ((x2 / 16) * 16)) + 1; // ith bit of x2
+    //         let indexedValue = 0;
+            
+    //         while (xCordIthBitIndex < temp) {
+    //             let indexedValue = indexedValue + twoToThe[xCordIthBitIndex];
+    //             let xCordIthBitIndex = xCordIthBitIndex + 1;
+    //         }
+
+    //         let address = 16384 + ((32 * y) + (x / 16));
+    //         while (y < (y2 + 1)) {
+    //             let value = Memory.peek(address);
+    //             if (color) {
+    //                 let value = value | indexedValue;
+    //             }
+    //             else {
+    //                 let value = value & (~indexedValue);
+    //             }
+    //             do Memory.poke(address, value);
+    //             let y = y + 1;
+    //             let address = address + 32;
+    //         }
+            
+    //         return;
+    //     }
+
+    //     let numOfWordsPerRow = (x2 / 16) - (x1 / 16);
+
+    //     let x = x1;
+    //     let y = y1;
+    //     let xCordIthBitIndex = (x - ((x / 16) * 16));
+    //     let indexedValue = 0;
+        
+    //     while (xCordIthBitIndex < 16) {
+    //         let indexedValue = indexedValue + twoToThe[xCordIthBitIndex];
+    //         let xCordIthBitIndex = xCordIthBitIndex + 1;
+    //     }
+
+    //     let address = 16384 + ((32 * y) + (x / 16));
+    //     while (y < (y2 + 1)) {
+    //         let value = Memory.peek(address);
+    //         if (color) {
+    //             let value = value | indexedValue;
+    //         }
+    //         else {
+    //             let value = value & (~indexedValue);
+    //         }
+    //         do Memory.poke(address, value);
+    //         let y = y + 1;
+    //         let address = address + 32;
+    //     }
+
+    //     let x = x + 16;
+        
+    //     while (numOfWordsPerRow > 1) {
+    //         let y = y1;
+    //         let address = 16384 + ((32 * y) + (x / 16));
+    //         while (y < (y2 + 1)) {
+    //             do Memory.poke(address, color);
+    //             let y = y + 1;
+    //             let address = address + 32;
+    //         }
+    //         let numOfWordsPerRow = numOfWordsPerRow - 1;
+    //         let x = x + 16;
+    //     }
+
+    //     let x = x2;
+    //     let y = y1;
+    //     let xCordIthBitIndex = (x - ((x / 16) * 16));
+    //     let indexedValue = 0;
+        
+    //     while (xCordIthBitIndex > -1) {
+    //         let indexedValue = indexedValue + twoToThe[xCordIthBitIndex];
+    //         let xCordIthBitIndex = xCordIthBitIndex - 1;
+    //     }
+
+    //     let address = 16384 + ((32 * y) + (x / 16));
+    //     while (y < (y2 + 1)) {
+    //         let value = Memory.peek(address);
+    //         if (color) {
+    //             let value = value | indexedValue;
+    //         }
+    //         else {
+    //             let value = value & (~indexedValue);
+    //         }
+    //         do Memory.poke(address, value);
+    //         let y = y + 1;
+    //         let address = address + 32;
+    //     }
+
+    //     return;
+    // }
+}

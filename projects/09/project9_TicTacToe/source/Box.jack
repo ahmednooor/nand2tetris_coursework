@@ -1,0 +1,144 @@
+class Box {
+    field boolean isSelected;
+    field boolean isNought;
+    field boolean isCross;
+    field int padding;
+    field int sideLength;
+    field int x;
+    field int y;
+
+    constructor Box new(int x1, int y1) {
+        let isSelected = false;
+        let isCross = false;
+        let isNought = false;
+        let padding = 9;
+        let sideLength = 60;
+        let x = x1;
+        let y = y1;
+
+        return this;
+    }
+
+    /** Draws box outline boundary */
+    method void drawBoundary() {
+        var int x1, y1, x2, y2;
+        
+        let x1 = x + padding;
+        let y1 = y + padding;
+        let x2 = (x + sideLength) - padding;
+        let y2 = (y + sideLength) - padding;
+
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x1, y1, x2, y2);
+        
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x1+1, y1+1, x2-1, y2-1);
+
+        return;
+    }
+
+    /** Draws or Erases 2px outline to select/unselect based on true or false input */
+    method void drawOrEraseSelector(boolean shouldDraw) {
+        var int x1, y1, x2, y2;
+        
+        do Screen.setColor(shouldDraw);
+        
+        let x1 = x + (padding / 2);
+        let y1 = y + (padding / 2);
+        let x2 = (x + sideLength) - (padding / 2);
+        let y2 = y1;
+        do Screen.drawLine(x1, y1, x2, y2);
+        do Screen.drawLine(x1, y1+1, x2, y2+1);
+        
+        let x2 = x1;
+        let y2 = (y + sideLength) - (padding / 2);
+        do Screen.drawLine(x1, y1, x2, y2);
+        do Screen.drawLine(x1+1, y1, x2+1, y2);
+
+        let x1 = x + sideLength - (padding / 2);
+        let y1 = y + sideLength - (padding / 2);
+        let x2 = x + (padding / 2);
+        let y2 = y1;
+        do Screen.drawLine(x1, y1, x2, y2);
+        do Screen.drawLine(x1, y1-1, x2, y2-1);
+
+        let x2 = x1;
+        let y2 = y + (padding / 2);
+        do Screen.drawLine(x1, y1, x2, y2);
+        do Screen.drawLine(x1-1, y1, x2-1, y2);
+        
+        return;
+    }
+
+    method void select() {
+        do drawOrEraseSelector(true);
+        let isSelected = true;
+        return;
+    }
+    
+    method void unselect() {
+        do drawOrEraseSelector(false);
+        let isSelected = false;
+        return;
+    }
+
+    method boolean drawCross() {
+        var int x1, y1, x2, y2;
+
+        if (isCross | isNought) {
+            return false;
+        }
+        
+        do Screen.setColor(true);
+        
+        let x1 = x + padding + (padding / 2);
+        let y1 = y + padding + (padding / 2);
+        let x2 = (x + sideLength) - padding - (padding / 2);
+        let y2 = (y + sideLength) - padding - (padding / 2);
+        do Screen.drawLine(x1, y1, x2, y2);
+        
+        let x1 = x2;
+        let y1 = y + padding + (padding / 2);
+        let x2 = x + padding + (padding / 2);
+        let y2 = y2;
+        do Screen.drawLine(x1, y1, x2, y2);
+
+        let isCross = true;
+        return isCross;
+    }
+
+    method boolean drawNought() {
+        var int x1, y1, radius;
+
+        if (isCross | isNought) {
+            return false;
+        }
+
+        do Screen.setColor(true);
+
+        let x1 = x + (sideLength / 2);
+        let y1 = y + (sideLength / 2);
+        let radius = (sideLength / 2) - padding - (padding / 2);
+        do Screen.drawCircle(x1, y1, radius);
+
+        do Screen.setColor(false);
+        do Screen.drawCircle(x1, y1, radius-1);
+
+        let isNought = true;
+        return isNought;
+    }
+
+    method boolean isCross() {
+        return isCross;
+    }
+
+    method boolean isNought() {
+        return isNought;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+}

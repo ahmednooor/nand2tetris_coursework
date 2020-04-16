@@ -1,0 +1,13 @@
+class Main {
+   
+    function void main() {
+        var TicTacToe ticTacToeGame;
+        let ticTacToeGame = TicTacToe.new();
+
+        do ticTacToeGame.startPlayLoop();
+        do ticTacToeGame.dispose();
+
+        return;
+    }
+
+}

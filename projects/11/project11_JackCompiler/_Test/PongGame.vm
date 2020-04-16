@@ -1,0 +1,390 @@
+// <-subroutineDec-> new
+function PongGame.new 0
+push constant 7
+call Memory.alloc 1
+pop pointer 0
+// <-doStatement->
+call Screen.clearScreen 0
+pop temp 0
+// <-letStatement->
+push constant 50
+pop this 6
+// <-letStatement->
+push constant 230
+push constant 229
+push this 6
+push constant 7
+call Bat.new 4
+pop this 0
+// <-letStatement->
+push constant 253
+push constant 222
+push constant 0
+push constant 511
+push constant 0
+push constant 229
+call Ball.new 6
+pop this 1
+// <-doStatement->
+push this 1
+push constant 400
+push constant 0
+call Ball.setDestination 3
+pop temp 0
+// <-doStatement->
+push constant 0
+push constant 238
+push constant 511
+push constant 240
+call Screen.drawRectangle 4
+pop temp 0
+// <-doStatement->
+push constant 22
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+// <-doStatement->
+push constant 8
+call String.new 1
+push constant 83
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+// <-letStatement->
+push constant 0
+pop this 3
+// <-letStatement->
+push constant 0
+pop this 4
+// <-letStatement->
+push constant 0
+pop this 2
+// <-letStatement->
+push constant 0
+pop this 5
+// <-returnStatement->
+push pointer 0
+return
+// <-subroutineDec-> dispose
+function PongGame.dispose 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push this 0
+call Bat.dispose 1
+pop temp 0
+// <-doStatement->
+push this 1
+call Ball.dispose 1
+pop temp 0
+// <-doStatement->
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> newInstance
+function PongGame.newInstance 0
+// <-letStatement->
+call PongGame.new 0
+pop static 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> getInstance
+function PongGame.getInstance 0
+// <-returnStatement->
+push static 0
+return
+// <-subroutineDec-> run
+function PongGame.run 1
+push argument 0
+pop pointer 0
+// <-whileStatement->
+label while_label1_563569c02eee4268ad01647d2da94037
+push this 3
+not
+not
+if-goto while_label2_48a8a192d21b4c47905b29ba7611e725
+// <-whileStatement->
+label while_label1_2baf3fd118984f6d8f8801cc7bb010ad
+push local 0
+push constant 0
+eq
+push this 3
+not
+and
+not
+if-goto while_label2_192cda206fbb457091ee3d6a8e742e0b
+// <-letStatement->
+call Keyboard.keyPressed 0
+pop local 0
+// <-doStatement->
+push this 0
+call Bat.move 1
+pop temp 0
+// <-doStatement->
+push pointer 0
+call PongGame.moveBall 1
+pop temp 0
+// <-doStatement->
+push constant 50
+call Sys.wait 1
+pop temp 0
+goto while_label1_2baf3fd118984f6d8f8801cc7bb010ad
+label while_label2_192cda206fbb457091ee3d6a8e742e0b
+// <-ifStatement->
+push local 0
+push constant 130
+eq
+not
+if-goto if_label1_35224f80ee704ef2ada3241aa7f55c0d
+// <-doStatement->
+push this 0
+push constant 1
+call Bat.setDirection 2
+pop temp 0
+goto if_label2_573bc0fe207e4181b9c8dcd3b0beda27
+label if_label1_35224f80ee704ef2ada3241aa7f55c0d
+// <-ifStatement->
+push local 0
+push constant 132
+eq
+not
+if-goto if_label1_979879f57a514dadb9dc65cf1f4d98bd
+// <-doStatement->
+push this 0
+push constant 2
+call Bat.setDirection 2
+pop temp 0
+goto if_label2_fdbc9cf2d0754e4babad67864c022f7a
+label if_label1_979879f57a514dadb9dc65cf1f4d98bd
+// <-ifStatement->
+push local 0
+push constant 140
+eq
+not
+if-goto if_label1_dc5badb82f5c45209ae16f06fcba94bd
+// <-letStatement->
+push constant 1
+neg
+pop this 3
+goto if_label2_e0cde76274944c1092e1137433e07b23
+label if_label1_dc5badb82f5c45209ae16f06fcba94bd
+label if_label2_e0cde76274944c1092e1137433e07b23
+label if_label2_fdbc9cf2d0754e4babad67864c022f7a
+label if_label2_573bc0fe207e4181b9c8dcd3b0beda27
+// <-whileStatement->
+label while_label1_d79fcba913e347e7840b89dd9cd06bb9
+push local 0
+push constant 0
+eq
+not
+push this 3
+not
+and
+not
+if-goto while_label2_ed954c32e4784a8d8ee89dafca15d3d4
+// <-letStatement->
+call Keyboard.keyPressed 0
+pop local 0
+// <-doStatement->
+push this 0
+call Bat.move 1
+pop temp 0
+// <-doStatement->
+push pointer 0
+call PongGame.moveBall 1
+pop temp 0
+// <-doStatement->
+push constant 50
+call Sys.wait 1
+pop temp 0
+goto while_label1_d79fcba913e347e7840b89dd9cd06bb9
+label while_label2_ed954c32e4784a8d8ee89dafca15d3d4
+goto while_label1_563569c02eee4268ad01647d2da94037
+label while_label2_48a8a192d21b4c47905b29ba7611e725
+// <-ifStatement->
+push this 3
+not
+if-goto if_label1_d1c13aa6feed48c1b3c83186b065e1f8
+// <-doStatement->
+push constant 10
+push constant 27
+call Output.moveCursor 2
+pop temp 0
+// <-doStatement->
+push constant 9
+call String.new 1
+push constant 71
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+goto if_label2_fa594cae12c64ebe97f24de3455adb82
+label if_label1_d1c13aa6feed48c1b3c83186b065e1f8
+label if_label2_fa594cae12c64ebe97f24de3455adb82
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> moveBall
+function PongGame.moveBall 5
+push argument 0
+pop pointer 0
+// <-letStatement->
+push this 1
+call Ball.move 1
+pop this 2
+// <-ifStatement->
+push this 2
+push constant 0
+gt
+push this 2
+push this 5
+eq
+not
+and
+not
+if-goto if_label1_c15b7cbc92064d1c97b80a4ea38b1540
+// <-letStatement->
+push this 2
+pop this 5
+// <-letStatement->
+push constant 0
+pop local 0
+// <-letStatement->
+push this 0
+call Bat.getLeft 1
+pop local 1
+// <-letStatement->
+push this 0
+call Bat.getRight 1
+pop local 2
+// <-letStatement->
+push this 1
+call Ball.getLeft 1
+pop local 3
+// <-letStatement->
+push this 1
+call Ball.getRight 1
+pop local 4
+// <-ifStatement->
+push this 2
+push constant 4
+eq
+not
+if-goto if_label1_6cb8bcb974854acfb051a94c1bfd2c8c
+// <-letStatement->
+push local 1
+push local 4
+gt
+push local 2
+push local 3
+lt
+or
+pop this 3
+// <-ifStatement->
+push this 3
+not
+not
+if-goto if_label1_a6ec6797312b4c0298262e7714294512
+// <-ifStatement->
+push local 4
+push local 1
+push constant 10
+add
+lt
+not
+if-goto if_label1_8724212e4ac54722857eb78240ade014
+// <-letStatement->
+push constant 1
+neg
+pop local 0
+goto if_label2_25c15e1120d34a71b739d63926ad6227
+label if_label1_8724212e4ac54722857eb78240ade014
+// <-ifStatement->
+push local 3
+push local 2
+push constant 10
+sub
+gt
+not
+if-goto if_label1_38df6a3e020b4d3aac141ef39fd3c6a0
+// <-letStatement->
+push constant 1
+pop local 0
+goto if_label2_a9e434f1a3bf4a9b8d7d7627bda96704
+label if_label1_38df6a3e020b4d3aac141ef39fd3c6a0
+label if_label2_a9e434f1a3bf4a9b8d7d7627bda96704
+label if_label2_25c15e1120d34a71b739d63926ad6227
+// <-letStatement->
+push this 6
+push constant 2
+sub
+pop this 6
+// <-doStatement->
+push this 0
+push this 6
+call Bat.setWidth 2
+pop temp 0
+// <-letStatement->
+push this 4
+push constant 1
+add
+pop this 4
+// <-doStatement->
+push constant 22
+push constant 7
+call Output.moveCursor 2
+pop temp 0
+// <-doStatement->
+push this 4
+call Output.printInt 1
+pop temp 0
+goto if_label2_1c77e8374b2f4cea9fbb0c099fc9d4b0
+label if_label1_a6ec6797312b4c0298262e7714294512
+label if_label2_1c77e8374b2f4cea9fbb0c099fc9d4b0
+goto if_label2_5474886d227a45968acfba18661d52f7
+label if_label1_6cb8bcb974854acfb051a94c1bfd2c8c
+label if_label2_5474886d227a45968acfba18661d52f7
+// <-doStatement->
+push this 1
+push local 0
+call Ball.bounce 2
+pop temp 0
+goto if_label2_1332a22984f4461eab89043e5a6cf10c
+label if_label1_c15b7cbc92064d1c97b80a4ea38b1540
+label if_label2_1332a22984f4461eab89043e5a6cf10c
+// <-returnStatement->
+push constant 0
+return

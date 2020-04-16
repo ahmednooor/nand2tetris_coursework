@@ -1,0 +1,438 @@
+class TicTacToe {
+    field Array boxes;
+    field Box tempBoxRef;
+    field int currentBoxIndex;
+    field int player1Score;
+    field int player2Score;
+    field int draws;
+    field int currentTurnPlayer;
+
+    constructor TicTacToe new() {
+        let player1Score = 0;
+        let player2Score = 0;
+        let draws = 0;
+        let currentTurnPlayer = 1;
+
+        return this;
+    }
+
+    method void startPlayLoop() {
+        var int currentKeyInput;
+        var boolean isBoxRecentlyMarked;
+
+        do initGame();
+
+        let currentKeyInput = Keyboard.keyPressed();
+        
+        while (~(currentKeyInput = 140)) {
+            if (currentKeyInput = 130) {
+                do moveLeft();
+                do Sys.wait(250);
+            }
+
+            if (currentKeyInput = 131) {
+                do moveUp();
+                do Sys.wait(250);
+            }
+
+            if (currentKeyInput = 132) {
+                do moveRight();
+                do Sys.wait(250);
+            }
+
+            if (currentKeyInput = 133) {
+                do moveDown();
+                do Sys.wait(250);
+            }
+
+            if (currentKeyInput = 32) {
+                let tempBoxRef = boxes[currentBoxIndex];
+                
+                if (currentTurnPlayer = 1) {
+                    let isBoxRecentlyMarked = tempBoxRef.drawCross();
+                }
+
+                if (currentTurnPlayer = 2) {
+                    let isBoxRecentlyMarked = tempBoxRef.drawNought();
+                }
+
+                if (isBoxRecentlyMarked) {
+                    let currentTurnPlayer = 3 - currentTurnPlayer;
+                }
+                
+                do Output.backSpace(); do Output.backSpace(); do Output.backSpace(); do Output.backSpace();
+                do Output.backSpace(); do Output.backSpace(); do Output.backSpace(); do Output.backSpace();
+                do Output.backSpace(); do Output.backSpace(); do Output.backSpace(); do Output.backSpace();
+
+                if (currentTurnPlayer = 1) {
+                    do Output.printString("Player 1 [x]");
+                }
+
+                if (currentTurnPlayer = 2) {
+                    do Output.printString("Player 2 [o]");
+                }
+
+                do checkStatus();
+                do Sys.wait(250);
+            }
+
+            let currentKeyInput = Keyboard.keyPressed();
+        }
+
+        return;
+    }
+
+    method void initGame() {
+        var int i, x1, y1;
+
+        do Screen.clearScreen();
+        do Output.moveCursor(0, 0);
+
+        do Output.println();
+        do Output.printString("Tic Tac Toe Game");
+        do Output.println();
+        do Output.println();
+        do Output.printString("Controls:");
+        do Output.println();
+        do Output.printString("1. Arrow Keys to navigate.");
+        do Output.println();
+        do Output.printString("2. Space Bar to mark the box.");
+        do Output.println();
+        do Output.printString("3. Escape Key to exit.");
+        do Output.println();
+        do Output.println();
+        do Output.printString("Scores:");
+        do Output.println();
+        do Output.printString("Player 1 [x]: ");
+        do Output.printInt(player1Score);
+        do Output.println();
+        do Output.printString("Player 2 [o]: ");
+        do Output.printInt(player2Score);
+        do Output.println();
+        do Output.printString("Draws       : ");
+        do Output.printInt(draws);
+        do Output.println();
+        do Output.println();
+        do Output.printString("Current Turn: ");
+        if (currentTurnPlayer = 1) {
+            do Output.printString("Player 1 [x]");
+        }
+        if (currentTurnPlayer = 2) {
+            do Output.printString("Player 2 [o]");
+        }
+
+        let boxes = Array.new(9);
+        let i = 0;
+        let x1 = 288;
+        let y1 = 40;
+        
+        while (i < 9) {
+            let boxes[i] = Box.new(x1, y1);
+            let tempBoxRef = boxes[i];
+            do tempBoxRef.drawBoundary();
+            let i = i + 1;
+            let x1 = x1 + 60;
+            if ((i = 3) | (i = 6)) {
+                let x1 = 288;
+                let y1 = y1 + 60;
+            }
+        }
+
+        let currentBoxIndex = 0;
+        let tempBoxRef = boxes[currentBoxIndex];
+        do tempBoxRef.select();
+
+        return;
+    }
+
+    method void checkStatus() {
+        if (hasCrossWon()) {
+            let player1Score = player1Score + 1;
+            do printResult("Player 1 [x] Won.");
+            return;
+        }
+        if (hasNoughtWon()) {
+            let player2Score = player2Score + 1;
+            do printResult("Player 2 [o] Won.");
+            return;
+        }
+        if (areAllBoxesMarked()) {
+            let draws = draws + 1;
+            do printResult("Its a Draw.");
+        }
+        return;
+    }
+
+    method void removeCurrentTurnLine() {
+        var int i;
+        let i = 0;
+        while (i < 27) {
+            do Output.backSpace();
+            let i = i + 1;
+        }
+        return;
+    }
+
+    method void printResult(string resultString) {
+        var int currentKeyInput;
+
+        do unselectAll();
+        do removeCurrentTurnLine();
+
+        do Output.println();
+        do Output.printString("------------------------");
+        do Output.println();
+        do Output.printString(resultString);
+        do Output.println();
+        do Output.println();
+        do Output.printString("Press Enter to continue.");
+
+        do Output.moveCursor(9, 14);
+        do Output.printInt(player1Score);
+        do Output.moveCursor(10, 14);
+        do Output.printInt(player2Score);
+        do Output.moveCursor(11, 14);
+        do Output.printInt(draws);
+
+        let currentKeyInput = Keyboard.keyPressed();
+        
+        while (~(currentKeyInput = 128)) {
+            let currentKeyInput = Keyboard.keyPressed();
+        }
+
+        do disposeBoxes();
+        do initGame();
+
+        return;
+    }
+
+    method boolean hasCrossWon() {
+        var boolean one, two, three;
+        var Box tempBox;
+        var int offset, i;
+
+        let offset = 3;
+        let i = 0;
+        while (i < 3) {
+            let tempBox = boxes[0+(offset*i)];
+            let one = tempBox.isCross();
+            let tempBox = boxes[1+(offset*i)];
+            let two = tempBox.isCross();
+            let tempBox = boxes[2+(offset*i)];
+            let three = tempBox.isCross();
+            if (one & two & three) {
+                return true;
+            }
+            let i = i + 1;
+        }
+        
+        let i = 0;
+        while (i < 3) {
+            let tempBox = boxes[0+i];
+            let one = tempBox.isCross();
+            let tempBox = boxes[3+i];
+            let two = tempBox.isCross();
+            let tempBox = boxes[6+i];
+            let three = tempBox.isCross();
+            if (one & two & three) {
+                return true;
+            }
+            let i = i + 1;
+        }
+
+        let tempBox = boxes[0];
+        let one = tempBox.isCross();
+        let tempBox = boxes[4];
+        let two = tempBox.isCross();
+        let tempBox = boxes[8];
+        let three = tempBox.isCross();
+        if (one & two & three) {
+            return true;
+        }
+
+        let tempBox = boxes[2];
+        let one = tempBox.isCross();
+        let tempBox = boxes[4];
+        let two = tempBox.isCross();
+        let tempBox = boxes[6];
+        let three = tempBox.isCross();
+        if (one & two & three) {
+            return true;
+        }
+
+        return false;
+    }
+
+    method boolean hasNoughtWon() {
+        var boolean one, two, three;
+        var Box tempBox;
+        var int offset, i;
+
+        let offset = 3;
+        let i = 0;
+        while (i < 3) {
+            let tempBox = boxes[0+(offset*i)];
+            let one = tempBox.isNought();
+            let tempBox = boxes[1+(offset*i)];
+            let two = tempBox.isNought();
+            let tempBox = boxes[2+(offset*i)];
+            let three = tempBox.isNought();
+            if (one & two & three) {
+                return true;
+            }
+            let i = i + 1;
+        }
+        
+        let i = 0;
+        while (i < 3) {
+            let tempBox = boxes[0+i];
+            let one = tempBox.isNought();
+            let tempBox = boxes[3+i];
+            let two = tempBox.isNought();
+            let tempBox = boxes[6+i];
+            let three = tempBox.isNought();
+            if (one & two & three) {
+                return true;
+            }
+            let i = i + 1;
+        }
+
+        let tempBox = boxes[0];
+        let one = tempBox.isNought();
+        let tempBox = boxes[4];
+        let two = tempBox.isNought();
+        let tempBox = boxes[8];
+        let three = tempBox.isNought();
+        if (one & two & three) {
+            return true;
+        }
+
+        let tempBox = boxes[2];
+        let one = tempBox.isNought();
+        let tempBox = boxes[4];
+        let two = tempBox.isNought();
+        let tempBox = boxes[6];
+        let three = tempBox.isNought();
+        if (one & two & three) {
+            return true;
+        }
+
+        return false;
+    }
+
+    method boolean areAllBoxesMarked() {
+        var Box tempBox;
+        var int i;
+        let i = 0;
+
+        while (i < 9) {
+            let tempBox = boxes[i];
+            if (~(tempBox.isCross()) & ~(tempBox.isNought())) {
+                return false;
+            }
+            let i = i + 1;
+        }
+
+        return true;
+    }
+
+    method void moveUp() {
+        var int possibleIndex;
+        let possibleIndex = currentBoxIndex - 3;
+        
+        if (possibleIndex < 0) {
+            let possibleIndex = 9 + possibleIndex;
+        }
+
+        let currentBoxIndex = possibleIndex;
+        do selectCurrentIndexedBox();
+        
+        return;
+    }
+
+    method void moveDown() {
+        var int possibleIndex;
+        let possibleIndex = currentBoxIndex + 3;
+        
+        if (possibleIndex > 8) {
+            let possibleIndex = possibleIndex - 9;
+            let possibleIndex = 0 + possibleIndex;
+        }
+
+        let currentBoxIndex = possibleIndex;
+        do selectCurrentIndexedBox();
+        
+        return;
+    }
+
+    method void moveLeft() {
+        var int possibleIndex;
+        let possibleIndex = currentBoxIndex - 1;
+        
+        if (possibleIndex < 0) {
+            let possibleIndex = 9 + possibleIndex;
+        }
+
+        let currentBoxIndex = possibleIndex;
+        do selectCurrentIndexedBox();
+        
+        return;
+    }
+
+    method void moveRight() {
+        var int possibleIndex;
+        let possibleIndex = currentBoxIndex + 1;
+        
+        if (possibleIndex > 8) {
+            let possibleIndex = possibleIndex - 9;
+            let possibleIndex = 0 + possibleIndex;
+        }
+
+        let currentBoxIndex = possibleIndex;
+        do selectCurrentIndexedBox();
+        
+        return;
+    }
+
+    method void selectCurrentIndexedBox() {
+        do unselectAll();
+        let tempBoxRef = boxes[currentBoxIndex];
+        do tempBoxRef.select();
+        return;
+    }
+
+    method void unselectAll() {
+        var int i;
+        let i = 0;
+
+        while (i < 9) {
+            let tempBoxRef = boxes[i];
+            do tempBoxRef.unselect();
+            let i = i + 1;
+        }
+
+        return;
+    }
+    
+    method void disposeBoxes() {
+        var int i;
+        var Box tempBox;
+        let i = 0;
+        
+        while (i < 9) {
+            let tempBox = boxes[i];
+            do tempBox.dispose();
+            let i = i + 1;
+        }
+
+        do boxes.dispose();
+        
+        return;
+    }
+
+    method void dispose() {
+        do disposeBoxes();
+        do Memory.deAlloc(this);
+        return;
+    }
+}

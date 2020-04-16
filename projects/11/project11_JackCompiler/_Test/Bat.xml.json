@@ -1,0 +1,2762 @@
+{
+  "node_name": "class",
+  "children": [
+    {
+      "node_name": "keyword",
+      "children": "class"
+    },
+    {
+      "node_name": "identifier",
+      "children": "Bat"
+    },
+    {
+      "node_name": "symbol",
+      "children": "{"
+    },
+    {
+      "node_name": "classVarDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "field"
+        },
+        {
+          "node_name": "keyword",
+          "children": "int"
+        },
+        {
+          "node_name": "identifier",
+          "children": "x"
+        },
+        {
+          "node_name": "symbol",
+          "children": ","
+        },
+        {
+          "node_name": "identifier",
+          "children": "y"
+        },
+        {
+          "node_name": "symbol",
+          "children": ";"
+        }
+      ]
+    },
+    {
+      "node_name": "classVarDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "field"
+        },
+        {
+          "node_name": "keyword",
+          "children": "int"
+        },
+        {
+          "node_name": "identifier",
+          "children": "width"
+        },
+        {
+          "node_name": "symbol",
+          "children": ","
+        },
+        {
+          "node_name": "identifier",
+          "children": "height"
+        },
+        {
+          "node_name": "symbol",
+          "children": ";"
+        }
+      ]
+    },
+    {
+      "node_name": "classVarDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "field"
+        },
+        {
+          "node_name": "keyword",
+          "children": "int"
+        },
+        {
+          "node_name": "identifier",
+          "children": "direction"
+        },
+        {
+          "node_name": "symbol",
+          "children": ";"
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "constructor"
+        },
+        {
+          "node_name": "identifier",
+          "children": "Bat"
+        },
+        {
+          "node_name": "identifier",
+          "children": "new"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": [
+            {
+              "node_name": "keyword",
+              "children": "int"
+            },
+            {
+              "node_name": "identifier",
+              "children": "Ax"
+            },
+            {
+              "node_name": "symbol",
+              "children": ","
+            },
+            {
+              "node_name": "keyword",
+              "children": "int"
+            },
+            {
+              "node_name": "identifier",
+              "children": "Ay"
+            },
+            {
+              "node_name": "symbol",
+              "children": ","
+            },
+            {
+              "node_name": "keyword",
+              "children": "int"
+            },
+            {
+              "node_name": "identifier",
+              "children": "Awidth"
+            },
+            {
+              "node_name": "symbol",
+              "children": ","
+            },
+            {
+              "node_name": "keyword",
+              "children": "int"
+            },
+            {
+              "node_name": "identifier",
+              "children": "Aheight"
+            }
+          ]
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "letStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "let"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "x"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "="
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "Ax"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "letStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "let"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "y"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "="
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "Ay"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "letStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "let"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "width"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "="
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "Awidth"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "letStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "let"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "height"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "="
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "Aheight"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "letStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "let"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "direction"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "="
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "integerConstant",
+                              "children": "2"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "show"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": []
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "this"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "void"
+        },
+        {
+          "node_name": "identifier",
+          "children": "dispose"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": []
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "Memory"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "."
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "deAlloc"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": [
+                        {
+                          "node_name": "expression",
+                          "children": [
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "keyword",
+                                  "children": "this"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "void"
+        },
+        {
+          "node_name": "identifier",
+          "children": "show"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": []
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "Screen"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "."
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "setColor"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": [
+                        {
+                          "node_name": "expression",
+                          "children": [
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "keyword",
+                                  "children": "true"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "draw"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": []
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "void"
+        },
+        {
+          "node_name": "identifier",
+          "children": "hide"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": []
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "Screen"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "."
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "setColor"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": [
+                        {
+                          "node_name": "expression",
+                          "children": [
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "keyword",
+                                  "children": "false"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "draw"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": []
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "void"
+        },
+        {
+          "node_name": "identifier",
+          "children": "draw"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": []
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "Screen"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "."
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "drawRectangle"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": [
+                        {
+                          "node_name": "expression",
+                          "children": [
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "identifier",
+                                  "children": "x"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "symbol",
+                          "children": ","
+                        },
+                        {
+                          "node_name": "expression",
+                          "children": [
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "identifier",
+                                  "children": "y"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "symbol",
+                          "children": ","
+                        },
+                        {
+                          "node_name": "expression",
+                          "children": [
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "identifier",
+                                  "children": "x"
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "+"
+                            },
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "identifier",
+                                  "children": "width"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "symbol",
+                          "children": ","
+                        },
+                        {
+                          "node_name": "expression",
+                          "children": [
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "identifier",
+                                  "children": "y"
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "+"
+                            },
+                            {
+                              "node_name": "term",
+                              "children": [
+                                {
+                                  "node_name": "identifier",
+                                  "children": "height"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "void"
+        },
+        {
+          "node_name": "identifier",
+          "children": "setDirection"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": [
+            {
+              "node_name": "keyword",
+              "children": "int"
+            },
+            {
+              "node_name": "identifier",
+              "children": "Adirection"
+            }
+          ]
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "letStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "let"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "direction"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "="
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "Adirection"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "int"
+        },
+        {
+          "node_name": "identifier",
+          "children": "getLeft"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": []
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "x"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "int"
+        },
+        {
+          "node_name": "identifier",
+          "children": "getRight"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": []
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "x"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "symbol",
+                          "children": "+"
+                        },
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "width"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "void"
+        },
+        {
+          "node_name": "identifier",
+          "children": "setWidth"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": [
+            {
+              "node_name": "keyword",
+              "children": "int"
+            },
+            {
+              "node_name": "identifier",
+              "children": "Awidth"
+            }
+          ]
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "hide"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": []
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "letStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "let"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "width"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "="
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "Awidth"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "doStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "do"
+                    },
+                    {
+                      "node_name": "identifier",
+                      "children": "show"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expressionList",
+                      "children": []
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "subroutineDec",
+      "children": [
+        {
+          "node_name": "keyword",
+          "children": "method"
+        },
+        {
+          "node_name": "keyword",
+          "children": "void"
+        },
+        {
+          "node_name": "identifier",
+          "children": "move"
+        },
+        {
+          "node_name": "symbol",
+          "children": "("
+        },
+        {
+          "node_name": "parameterList",
+          "children": []
+        },
+        {
+          "node_name": "symbol",
+          "children": ")"
+        },
+        {
+          "node_name": "subroutineBody",
+          "children": [
+            {
+              "node_name": "symbol",
+              "children": "{"
+            },
+            {
+              "node_name": "statements",
+              "children": [
+                {
+                  "node_name": "ifStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "if"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "("
+                    },
+                    {
+                      "node_name": "expression",
+                      "children": [
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "identifier",
+                              "children": "direction"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "symbol",
+                          "children": "="
+                        },
+                        {
+                          "node_name": "term",
+                          "children": [
+                            {
+                              "node_name": "integerConstant",
+                              "children": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ")"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "{"
+                    },
+                    {
+                      "node_name": "statements",
+                      "children": [
+                        {
+                          "node_name": "letStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "let"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "x"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "="
+                            },
+                            {
+                              "node_name": "expression",
+                              "children": [
+                                {
+                                  "node_name": "term",
+                                  "children": [
+                                    {
+                                      "node_name": "identifier",
+                                      "children": "x"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": "-"
+                                },
+                                {
+                                  "node_name": "term",
+                                  "children": [
+                                    {
+                                      "node_name": "integerConstant",
+                                      "children": "4"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "ifStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "if"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expression",
+                              "children": [
+                                {
+                                  "node_name": "term",
+                                  "children": [
+                                    {
+                                      "node_name": "identifier",
+                                      "children": "x"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": "<"
+                                },
+                                {
+                                  "node_name": "term",
+                                  "children": [
+                                    {
+                                      "node_name": "integerConstant",
+                                      "children": "0"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "{"
+                            },
+                            {
+                              "node_name": "statements",
+                              "children": [
+                                {
+                                  "node_name": "letStatement",
+                                  "children": [
+                                    {
+                                      "node_name": "keyword",
+                                      "children": "let"
+                                    },
+                                    {
+                                      "node_name": "identifier",
+                                      "children": "x"
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "="
+                                    },
+                                    {
+                                      "node_name": "expression",
+                                      "children": [
+                                        {
+                                          "node_name": "term",
+                                          "children": [
+                                            {
+                                              "node_name": "integerConstant",
+                                              "children": "0"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": ";"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "}"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "doStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "do"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "Screen"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "."
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "setColor"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expressionList",
+                              "children": [
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "keyword",
+                                          "children": "false"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "doStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "do"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "Screen"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "."
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "drawRectangle"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expressionList",
+                              "children": [
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "symbol",
+                                          "children": "("
+                                        },
+                                        {
+                                          "node_name": "expression",
+                                          "children": [
+                                            {
+                                              "node_name": "term",
+                                              "children": [
+                                                {
+                                                  "node_name": "identifier",
+                                                  "children": "x"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "node_name": "symbol",
+                                              "children": "+"
+                                            },
+                                            {
+                                              "node_name": "term",
+                                              "children": [
+                                                {
+                                                  "node_name": "identifier",
+                                                  "children": "width"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "node_name": "symbol",
+                                          "children": ")"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "+"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "integerConstant",
+                                          "children": "1"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "y"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "symbol",
+                                          "children": "("
+                                        },
+                                        {
+                                          "node_name": "expression",
+                                          "children": [
+                                            {
+                                              "node_name": "term",
+                                              "children": [
+                                                {
+                                                  "node_name": "identifier",
+                                                  "children": "x"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "node_name": "symbol",
+                                              "children": "+"
+                                            },
+                                            {
+                                              "node_name": "term",
+                                              "children": [
+                                                {
+                                                  "node_name": "identifier",
+                                                  "children": "width"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "node_name": "symbol",
+                                          "children": ")"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "+"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "integerConstant",
+                                          "children": "4"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "y"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "+"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "height"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "doStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "do"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "Screen"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "."
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "setColor"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expressionList",
+                              "children": [
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "keyword",
+                                          "children": "true"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "doStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "do"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "Screen"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "."
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "drawRectangle"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expressionList",
+                              "children": [
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "x"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "y"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "x"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "+"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "integerConstant",
+                                          "children": "3"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "y"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "+"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "height"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "}"
+                    },
+                    {
+                      "node_name": "keyword",
+                      "children": "else"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "{"
+                    },
+                    {
+                      "node_name": "statements",
+                      "children": [
+                        {
+                          "node_name": "letStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "let"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "x"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "="
+                            },
+                            {
+                              "node_name": "expression",
+                              "children": [
+                                {
+                                  "node_name": "term",
+                                  "children": [
+                                    {
+                                      "node_name": "identifier",
+                                      "children": "x"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": "+"
+                                },
+                                {
+                                  "node_name": "term",
+                                  "children": [
+                                    {
+                                      "node_name": "integerConstant",
+                                      "children": "4"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "ifStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "if"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expression",
+                              "children": [
+                                {
+                                  "node_name": "term",
+                                  "children": [
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "("
+                                    },
+                                    {
+                                      "node_name": "expression",
+                                      "children": [
+                                        {
+                                          "node_name": "term",
+                                          "children": [
+                                            {
+                                              "node_name": "identifier",
+                                              "children": "x"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "node_name": "symbol",
+                                          "children": "+"
+                                        },
+                                        {
+                                          "node_name": "term",
+                                          "children": [
+                                            {
+                                              "node_name": "identifier",
+                                              "children": "width"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": ")"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ">"
+                                },
+                                {
+                                  "node_name": "term",
+                                  "children": [
+                                    {
+                                      "node_name": "integerConstant",
+                                      "children": "511"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "{"
+                            },
+                            {
+                              "node_name": "statements",
+                              "children": [
+                                {
+                                  "node_name": "letStatement",
+                                  "children": [
+                                    {
+                                      "node_name": "keyword",
+                                      "children": "let"
+                                    },
+                                    {
+                                      "node_name": "identifier",
+                                      "children": "x"
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "="
+                                    },
+                                    {
+                                      "node_name": "expression",
+                                      "children": [
+                                        {
+                                          "node_name": "term",
+                                          "children": [
+                                            {
+                                              "node_name": "integerConstant",
+                                              "children": "511"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "node_name": "symbol",
+                                          "children": "-"
+                                        },
+                                        {
+                                          "node_name": "term",
+                                          "children": [
+                                            {
+                                              "node_name": "identifier",
+                                              "children": "width"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": ";"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "}"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "doStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "do"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "Screen"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "."
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "setColor"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expressionList",
+                              "children": [
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "keyword",
+                                          "children": "false"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "doStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "do"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "Screen"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "."
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "drawRectangle"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expressionList",
+                              "children": [
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "x"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "-"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "integerConstant",
+                                          "children": "4"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "y"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "x"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "-"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "integerConstant",
+                                          "children": "1"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "y"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "+"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "height"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "doStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "do"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "Screen"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "."
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "setColor"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expressionList",
+                              "children": [
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "keyword",
+                                          "children": "true"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        },
+                        {
+                          "node_name": "doStatement",
+                          "children": [
+                            {
+                              "node_name": "keyword",
+                              "children": "do"
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "Screen"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "."
+                            },
+                            {
+                              "node_name": "identifier",
+                              "children": "drawRectangle"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": "("
+                            },
+                            {
+                              "node_name": "expressionList",
+                              "children": [
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "symbol",
+                                          "children": "("
+                                        },
+                                        {
+                                          "node_name": "expression",
+                                          "children": [
+                                            {
+                                              "node_name": "term",
+                                              "children": [
+                                                {
+                                                  "node_name": "identifier",
+                                                  "children": "x"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "node_name": "symbol",
+                                              "children": "+"
+                                            },
+                                            {
+                                              "node_name": "term",
+                                              "children": [
+                                                {
+                                                  "node_name": "identifier",
+                                                  "children": "width"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "node_name": "symbol",
+                                          "children": ")"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "-"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "integerConstant",
+                                          "children": "3"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "y"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "x"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "+"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "width"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node_name": "symbol",
+                                  "children": ","
+                                },
+                                {
+                                  "node_name": "expression",
+                                  "children": [
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "y"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "node_name": "symbol",
+                                      "children": "+"
+                                    },
+                                    {
+                                      "node_name": "term",
+                                      "children": [
+                                        {
+                                          "node_name": "identifier",
+                                          "children": "height"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ")"
+                            },
+                            {
+                              "node_name": "symbol",
+                              "children": ";"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": "}"
+                    }
+                  ]
+                },
+                {
+                  "node_name": "returnStatement",
+                  "children": [
+                    {
+                      "node_name": "keyword",
+                      "children": "return"
+                    },
+                    {
+                      "node_name": "symbol",
+                      "children": ";"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node_name": "symbol",
+              "children": "}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node_name": "symbol",
+      "children": "}"
+    }
+  ]
+}

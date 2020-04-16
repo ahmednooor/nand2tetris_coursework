@@ -1,0 +1,2094 @@
+// <-subroutineDec-> init
+function Output.init 0
+// <-letStatement->
+push constant 2
+call Array.new 1
+pop static 0
+// <-letStatement->
+push constant 0
+push static 0
+push constant 0
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push constant 0
+push static 0
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push constant 1
+neg
+pop static 1
+// <-doStatement->
+call Output.initMap 0
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> initMap
+function Output.initMap 1
+// <-letStatement->
+push constant 127
+call Array.new 1
+pop static 2
+// <-doStatement->
+push constant 0
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 32
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 33
+push constant 12
+push constant 30
+push constant 30
+push constant 30
+push constant 12
+push constant 12
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 34
+push constant 54
+push constant 54
+push constant 20
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 35
+push constant 0
+push constant 18
+push constant 18
+push constant 63
+push constant 18
+push constant 18
+push constant 63
+push constant 18
+push constant 18
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 36
+push constant 12
+push constant 30
+push constant 51
+push constant 3
+push constant 30
+push constant 48
+push constant 51
+push constant 30
+push constant 12
+push constant 12
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 37
+push constant 0
+push constant 0
+push constant 35
+push constant 51
+push constant 24
+push constant 12
+push constant 6
+push constant 51
+push constant 49
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 38
+push constant 12
+push constant 30
+push constant 30
+push constant 12
+push constant 54
+push constant 27
+push constant 27
+push constant 27
+push constant 54
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 39
+push constant 12
+push constant 12
+push constant 6
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 40
+push constant 24
+push constant 12
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 12
+push constant 24
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 41
+push constant 6
+push constant 12
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 12
+push constant 6
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 42
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 30
+push constant 63
+push constant 30
+push constant 51
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 43
+push constant 0
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 63
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 44
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 6
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 45
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 63
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 46
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 47
+push constant 0
+push constant 0
+push constant 32
+push constant 48
+push constant 24
+push constant 12
+push constant 6
+push constant 3
+push constant 1
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 48
+push constant 12
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 49
+push constant 12
+push constant 14
+push constant 15
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 50
+push constant 30
+push constant 51
+push constant 48
+push constant 24
+push constant 12
+push constant 6
+push constant 3
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 51
+push constant 30
+push constant 51
+push constant 48
+push constant 48
+push constant 28
+push constant 48
+push constant 48
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 52
+push constant 16
+push constant 24
+push constant 28
+push constant 26
+push constant 25
+push constant 63
+push constant 24
+push constant 24
+push constant 60
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 53
+push constant 63
+push constant 3
+push constant 3
+push constant 31
+push constant 48
+push constant 48
+push constant 48
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 54
+push constant 28
+push constant 6
+push constant 3
+push constant 3
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 55
+push constant 63
+push constant 49
+push constant 48
+push constant 48
+push constant 24
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 56
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 57
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 62
+push constant 48
+push constant 48
+push constant 24
+push constant 14
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 58
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 59
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 6
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 60
+push constant 0
+push constant 0
+push constant 24
+push constant 12
+push constant 6
+push constant 3
+push constant 6
+push constant 12
+push constant 24
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 61
+push constant 0
+push constant 0
+push constant 0
+push constant 63
+push constant 0
+push constant 0
+push constant 63
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 62
+push constant 0
+push constant 0
+push constant 3
+push constant 6
+push constant 12
+push constant 24
+push constant 12
+push constant 6
+push constant 3
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 64
+push constant 30
+push constant 51
+push constant 51
+push constant 59
+push constant 59
+push constant 59
+push constant 27
+push constant 3
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 63
+push constant 30
+push constant 51
+push constant 51
+push constant 24
+push constant 12
+push constant 12
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 65
+push constant 12
+push constant 30
+push constant 51
+push constant 51
+push constant 63
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 66
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 67
+push constant 28
+push constant 54
+push constant 35
+push constant 3
+push constant 3
+push constant 3
+push constant 35
+push constant 54
+push constant 28
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 68
+push constant 15
+push constant 27
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 27
+push constant 15
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 69
+push constant 63
+push constant 51
+push constant 35
+push constant 11
+push constant 15
+push constant 11
+push constant 35
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 70
+push constant 63
+push constant 51
+push constant 35
+push constant 11
+push constant 15
+push constant 11
+push constant 3
+push constant 3
+push constant 3
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 71
+push constant 28
+push constant 54
+push constant 35
+push constant 3
+push constant 59
+push constant 51
+push constant 51
+push constant 54
+push constant 44
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 72
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 63
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 73
+push constant 30
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 74
+push constant 60
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 27
+push constant 27
+push constant 14
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 75
+push constant 51
+push constant 51
+push constant 51
+push constant 27
+push constant 15
+push constant 27
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 76
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+push constant 35
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 77
+push constant 33
+push constant 51
+push constant 63
+push constant 63
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 78
+push constant 51
+push constant 51
+push constant 55
+push constant 55
+push constant 63
+push constant 59
+push constant 59
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 79
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 80
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 81
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 63
+push constant 59
+push constant 30
+push constant 48
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 82
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 27
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 83
+push constant 30
+push constant 51
+push constant 51
+push constant 6
+push constant 28
+push constant 48
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 84
+push constant 63
+push constant 63
+push constant 45
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 85
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 86
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 30
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 87
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 63
+push constant 63
+push constant 63
+push constant 18
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 88
+push constant 51
+push constant 51
+push constant 30
+push constant 30
+push constant 12
+push constant 30
+push constant 30
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 89
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 90
+push constant 63
+push constant 51
+push constant 49
+push constant 24
+push constant 12
+push constant 6
+push constant 35
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 91
+push constant 30
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 92
+push constant 0
+push constant 0
+push constant 1
+push constant 3
+push constant 6
+push constant 12
+push constant 24
+push constant 48
+push constant 32
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 93
+push constant 30
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 94
+push constant 8
+push constant 28
+push constant 54
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 95
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 63
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 96
+push constant 6
+push constant 12
+push constant 24
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 97
+push constant 0
+push constant 0
+push constant 0
+push constant 14
+push constant 24
+push constant 30
+push constant 27
+push constant 27
+push constant 54
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 98
+push constant 3
+push constant 3
+push constant 3
+push constant 15
+push constant 27
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 99
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 3
+push constant 3
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 100
+push constant 48
+push constant 48
+push constant 48
+push constant 60
+push constant 54
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 101
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 63
+push constant 3
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 102
+push constant 28
+push constant 54
+push constant 38
+push constant 6
+push constant 15
+push constant 6
+push constant 6
+push constant 6
+push constant 15
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 103
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 62
+push constant 48
+push constant 51
+push constant 30
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 104
+push constant 3
+push constant 3
+push constant 3
+push constant 27
+push constant 55
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 105
+push constant 12
+push constant 12
+push constant 0
+push constant 14
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 106
+push constant 48
+push constant 48
+push constant 0
+push constant 56
+push constant 48
+push constant 48
+push constant 48
+push constant 48
+push constant 51
+push constant 30
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 107
+push constant 3
+push constant 3
+push constant 3
+push constant 51
+push constant 27
+push constant 15
+push constant 15
+push constant 27
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 108
+push constant 14
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 109
+push constant 0
+push constant 0
+push constant 0
+push constant 29
+push constant 63
+push constant 43
+push constant 43
+push constant 43
+push constant 43
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 110
+push constant 0
+push constant 0
+push constant 0
+push constant 29
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 111
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 112
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 3
+push constant 3
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 113
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 62
+push constant 48
+push constant 48
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 114
+push constant 0
+push constant 0
+push constant 0
+push constant 29
+push constant 55
+push constant 51
+push constant 3
+push constant 3
+push constant 7
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 115
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 6
+push constant 24
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 116
+push constant 4
+push constant 6
+push constant 6
+push constant 15
+push constant 6
+push constant 6
+push constant 6
+push constant 54
+push constant 28
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 117
+push constant 0
+push constant 0
+push constant 0
+push constant 27
+push constant 27
+push constant 27
+push constant 27
+push constant 27
+push constant 54
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 118
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 119
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 51
+push constant 51
+push constant 63
+push constant 63
+push constant 18
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 120
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 30
+push constant 12
+push constant 12
+push constant 30
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 121
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 51
+push constant 51
+push constant 62
+push constant 48
+push constant 24
+push constant 15
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 122
+push constant 0
+push constant 0
+push constant 0
+push constant 63
+push constant 27
+push constant 12
+push constant 6
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 123
+push constant 56
+push constant 12
+push constant 12
+push constant 12
+push constant 7
+push constant 12
+push constant 12
+push constant 12
+push constant 56
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 124
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 125
+push constant 7
+push constant 12
+push constant 12
+push constant 12
+push constant 56
+push constant 12
+push constant 12
+push constant 12
+push constant 7
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-doStatement->
+push constant 126
+push constant 38
+push constant 45
+push constant 25
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> create
+function Output.create 1
+// <-letStatement->
+push constant 11
+call Array.new 1
+pop local 0
+// <-letStatement->
+push local 0
+push static 2
+push argument 0
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 1
+push local 0
+push constant 0
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 2
+push local 0
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 3
+push local 0
+push constant 2
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 4
+push local 0
+push constant 3
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 5
+push local 0
+push constant 4
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 6
+push local 0
+push constant 5
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 7
+push local 0
+push constant 6
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 8
+push local 0
+push constant 7
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 9
+push local 0
+push constant 8
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 10
+push local 0
+push constant 9
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 11
+push local 0
+push constant 10
+add
+pop pointer 1
+pop that 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> getMap
+function Output.getMap 0
+// <-ifStatement->
+push argument 0
+push constant 32
+lt
+push argument 0
+push constant 126
+gt
+or
+not
+if-goto if_label1_6161402fa1344129b765293000ce1de7
+// <-letStatement->
+push constant 0
+pop argument 0
+goto if_label2_00cc733a787048238c23fafd93df08b3
+label if_label1_6161402fa1344129b765293000ce1de7
+label if_label2_00cc733a787048238c23fafd93df08b3
+// <-returnStatement->
+push static 2
+push argument 0
+add
+pop pointer 1
+push that 0
+return
+// <-subroutineDec-> moveCursor
+function Output.moveCursor 0
+// <-letStatement->
+push argument 0
+push static 0
+push constant 0
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 1
+push static 0
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-doStatement->
+call Output.setIsFirstHalfOfWord 0
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> setIsFirstHalfOfWord
+function Output.setIsFirstHalfOfWord 0
+// <-ifStatement->
+push static 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push static 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 2
+call Math.divide 2
+push constant 2
+call Math.multiply 2
+sub
+push constant 0
+eq
+not
+if-goto if_label1_eb651359b52d47bd85c58fe772a51931
+// <-letStatement->
+push constant 1
+neg
+pop static 1
+goto if_label2_e1be88b84e764df98b260e6e70a1b7b6
+label if_label1_eb651359b52d47bd85c58fe772a51931
+// <-letStatement->
+push constant 0
+pop static 1
+label if_label2_e1be88b84e764df98b260e6e70a1b7b6
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> incrementCursor
+function Output.incrementCursor 0
+// <-letStatement->
+push static 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 1
+add
+push static 0
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-ifStatement->
+push static 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 63
+gt
+not
+if-goto if_label1_ecf2fd21368b4e56a9ab7f305e586af1
+// <-letStatement->
+push constant 0
+push static 0
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push static 0
+push constant 0
+add
+pop pointer 1
+push that 0
+push constant 1
+add
+push static 0
+push constant 0
+add
+pop pointer 1
+pop that 0
+goto if_label2_0f7bbd3b94734920a3ee7d9de34ec321
+label if_label1_ecf2fd21368b4e56a9ab7f305e586af1
+label if_label2_0f7bbd3b94734920a3ee7d9de34ec321
+// <-ifStatement->
+push static 0
+push constant 0
+add
+pop pointer 1
+push that 0
+push constant 22
+gt
+not
+if-goto if_label1_a4ad55b5205f426f93d7db67fc735725
+// <-letStatement->
+push constant 0
+push static 0
+push constant 0
+add
+pop pointer 1
+pop that 0
+goto if_label2_15951c6b112f4b44871f9c4622957661
+label if_label1_a4ad55b5205f426f93d7db67fc735725
+label if_label2_15951c6b112f4b44871f9c4622957661
+// <-doStatement->
+call Output.setIsFirstHalfOfWord 0
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> decrementCursor
+function Output.decrementCursor 0
+// <-letStatement->
+push static 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 1
+sub
+push static 0
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-ifStatement->
+push static 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 0
+lt
+not
+if-goto if_label1_c38d9c0ad75440b2aa6a79c6bcb287ea
+// <-letStatement->
+push constant 0
+push static 0
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push static 0
+push constant 0
+add
+pop pointer 1
+push that 0
+push constant 1
+sub
+push static 0
+push constant 0
+add
+pop pointer 1
+pop that 0
+goto if_label2_5116e12566f44c649782809c4fc65a0b
+label if_label1_c38d9c0ad75440b2aa6a79c6bcb287ea
+label if_label2_5116e12566f44c649782809c4fc65a0b
+// <-ifStatement->
+push static 0
+push constant 0
+add
+pop pointer 1
+push that 0
+push constant 0
+lt
+not
+if-goto if_label1_134bc7124f7d4566b20ee47d6a10a7b1
+// <-letStatement->
+push constant 22
+push static 0
+push constant 0
+add
+pop pointer 1
+pop that 0
+goto if_label2_087cfd98621a48aaa5b744f2eef009a2
+label if_label1_134bc7124f7d4566b20ee47d6a10a7b1
+label if_label2_087cfd98621a48aaa5b744f2eef009a2
+// <-doStatement->
+call Output.setIsFirstHalfOfWord 0
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> printChar
+function Output.printChar 7
+// <-letStatement->
+push argument 0
+call Output.getMap 1
+pop local 6
+// <-letStatement->
+push constant 0
+pop local 4
+// <-letStatement->
+push static 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 8
+call Math.multiply 2
+pop local 0
+// <-letStatement->
+push static 0
+push constant 0
+add
+pop pointer 1
+push that 0
+push constant 11
+call Math.multiply 2
+pop local 1
+// <-whileStatement->
+label while_label1_1b1b67b0375a4beb84fe24813e53ad30
+push local 4
+push constant 11
+lt
+not
+if-goto while_label2_6e30b878aab2444a92e2c2d38946fbed
+// <-letStatement->
+push constant 16384
+push constant 32
+push local 1
+call Math.multiply 2
+push local 0
+push constant 16
+call Math.divide 2
+add
+add
+pop local 2
+// <-letStatement->
+push local 2
+call Memory.peek 1
+pop local 3
+// <-letStatement->
+push local 6
+push local 4
+add
+pop pointer 1
+push that 0
+pop local 5
+// <-ifStatement->
+push static 1
+not
+if-goto if_label1_8380c60b16f34eb792852abfff8cea94
+// <-letStatement->
+push local 3
+push constant 256
+call Math.divide 2
+pop local 3
+// <-letStatement->
+push local 3
+push constant 256
+call Math.multiply 2
+pop local 3
+goto if_label2_c1d23e6b7d584b258e7ec2210e2b1f12
+label if_label1_8380c60b16f34eb792852abfff8cea94
+label if_label2_c1d23e6b7d584b258e7ec2210e2b1f12
+// <-ifStatement->
+push static 1
+not
+not
+if-goto if_label1_de67c4cf7e3446ea99fd83576d54003c
+// <-letStatement->
+push local 5
+push constant 256
+call Math.multiply 2
+pop local 5
+// <-letStatement->
+push local 3
+push constant 256
+call Math.multiply 2
+pop local 3
+// <-letStatement->
+push local 3
+push constant 256
+call Math.divide 2
+pop local 3
+goto if_label2_37c2626c906d4feca201ff25147cd238
+label if_label1_de67c4cf7e3446ea99fd83576d54003c
+label if_label2_37c2626c906d4feca201ff25147cd238
+// <-letStatement->
+push local 3
+push local 5
+or
+pop local 3
+// <-doStatement->
+push local 2
+push local 3
+call Memory.poke 2
+pop temp 0
+// <-letStatement->
+push local 4
+push constant 1
+add
+pop local 4
+// <-letStatement->
+push local 1
+push constant 1
+add
+pop local 1
+goto while_label1_1b1b67b0375a4beb84fe24813e53ad30
+label while_label2_6e30b878aab2444a92e2c2d38946fbed
+// <-doStatement->
+call Output.incrementCursor 0
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> printString
+function Output.printString 2
+// <-letStatement->
+push argument 0
+call String.length 1
+pop local 1
+// <-letStatement->
+push constant 0
+pop local 0
+// <-whileStatement->
+label while_label1_b68c7ce755e24170976fe91558b97966
+push local 0
+push local 1
+lt
+not
+if-goto while_label2_69828e40756c485c931c0f71242cd0a1
+// <-doStatement->
+push argument 0
+push local 0
+call String.charAt 2
+call Output.printChar 1
+pop temp 0
+// <-letStatement->
+push local 0
+push constant 1
+add
+pop local 0
+goto while_label1_b68c7ce755e24170976fe91558b97966
+label while_label2_69828e40756c485c931c0f71242cd0a1
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> printInt
+function Output.printInt 2
+// <-ifStatement->
+push argument 0
+push constant 0
+lt
+not
+if-goto if_label1_c41a9f4dfd664a6fb8e6639320356d77
+// <-doStatement->
+push constant 45
+call Output.printChar 1
+pop temp 0
+// <-letStatement->
+push argument 0
+neg
+pop argument 0
+goto if_label2_08ee69943d2c4c4fadefea21743daeec
+label if_label1_c41a9f4dfd664a6fb8e6639320356d77
+label if_label2_08ee69943d2c4c4fadefea21743daeec
+// <-letStatement->
+push constant 5
+call Array.new 1
+pop local 0
+// <-letStatement->
+push constant 1
+neg
+pop local 1
+// <-whileStatement->
+label while_label1_127e2f097b56413798038d1dd742d6de
+push argument 0
+push constant 0
+eq
+not
+not
+if-goto while_label2_59e79237d49049028587d7d414b906fc
+// <-letStatement->
+push local 1
+push constant 1
+add
+pop local 1
+// <-letStatement->
+push argument 0
+push argument 0
+push constant 10
+call Math.divide 2
+push constant 10
+call Math.multiply 2
+sub
+push local 0
+push local 1
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 0
+push constant 10
+call Math.divide 2
+pop argument 0
+goto while_label1_127e2f097b56413798038d1dd742d6de
+label while_label2_59e79237d49049028587d7d414b906fc
+// <-whileStatement->
+label while_label1_e787cef7042949518f8e51d7890ca672
+push local 1
+push constant 1
+neg
+gt
+not
+if-goto while_label2_c4c86d0ad20d4b388cc73ea78f4941f1
+// <-doStatement->
+push constant 48
+push local 0
+push local 1
+add
+pop pointer 1
+push that 0
+add
+call Output.printChar 1
+pop temp 0
+// <-letStatement->
+push local 1
+push constant 1
+sub
+pop local 1
+goto while_label1_e787cef7042949518f8e51d7890ca672
+label while_label2_c4c86d0ad20d4b388cc73ea78f4941f1
+// <-doStatement->
+push local 0
+call Array.dispose 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> println
+function Output.println 0
+// <-letStatement->
+push static 0
+push constant 0
+add
+pop pointer 1
+push that 0
+push constant 1
+add
+push static 0
+push constant 0
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push constant 1
+neg
+push static 0
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-doStatement->
+call Output.incrementCursor 0
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> backSpace
+function Output.backSpace 0
+// <-doStatement->
+call Output.decrementCursor 0
+pop temp 0
+// <-doStatement->
+push constant 32
+call Output.printChar 1
+pop temp 0
+// <-doStatement->
+call Output.decrementCursor 0
+pop temp 0
+// <-returnStatement->
+push constant 0
+return

@@ -1,0 +1,246 @@
+// <-subroutineDec-> init
+function Memory.init 0
+// <-letStatement->
+push constant 0
+pop static 0
+// <-letStatement->
+push constant 2048
+pop static 1
+// <-letStatement->
+push constant 2048
+pop static 2
+// <-letStatement->
+push constant 0
+push static 1
+push constant 0
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push constant 14335
+push static 1
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> peek
+function Memory.peek 0
+// <-returnStatement->
+push static 0
+push argument 0
+add
+pop pointer 1
+push that 0
+return
+// <-subroutineDec-> poke
+function Memory.poke 0
+// <-letStatement->
+push argument 1
+push static 0
+push argument 0
+add
+pop pointer 1
+pop that 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> alloc
+function Memory.alloc 3
+// <-letStatement->
+push static 2
+pop local 0
+// <-letStatement->
+push constant 0
+pop local 1
+// <-letStatement->
+push constant 0
+pop local 2
+// <-ifStatement->
+push local 1
+push constant 0
+eq
+push local 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push argument 0
+push constant 1
+add
+gt
+and
+not
+if-goto if_label1_939d0862bc9b497aaafef2ebf0926bfd
+// <-letStatement->
+push local 0
+pop local 1
+goto if_label2_8fa8f6afe68546a78c64bf67e4cb43cd
+label if_label1_939d0862bc9b497aaafef2ebf0926bfd
+label if_label2_8fa8f6afe68546a78c64bf67e4cb43cd
+// <-whileStatement->
+label while_label1_ef01b454aa034526a97c7e09459b31b9
+push local 0
+push constant 0
+eq
+not
+not
+if-goto while_label2_f50e07b9933b4f40888a9fc74bd6b853
+// <-ifStatement->
+push local 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push argument 0
+push constant 1
+add
+gt
+push local 0
+push constant 1
+add
+pop pointer 1
+push that 0
+push local 1
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 1
+add
+lt
+and
+push local 1
+push constant 0
+eq
+not
+and
+not
+if-goto if_label1_4970b1985be84d85ab7693bc49f20407
+// <-letStatement->
+push local 0
+pop local 1
+goto if_label2_25e5ac6427024b84b71bb5d9e13f7b9e
+label if_label1_4970b1985be84d85ab7693bc49f20407
+label if_label2_25e5ac6427024b84b71bb5d9e13f7b9e
+// <-letStatement->
+push local 0
+push constant 0
+add
+pop pointer 1
+push that 0
+pop local 0
+goto while_label1_ef01b454aa034526a97c7e09459b31b9
+label while_label2_f50e07b9933b4f40888a9fc74bd6b853
+// <-ifStatement->
+push local 1
+push constant 0
+eq
+not
+if-goto if_label1_41b25449715047209622771ff9c9c32b
+// <-doStatement->
+push constant 1234
+neg
+call Sys.error 1
+pop temp 0
+// <-doStatement->
+call Sys.halt 0
+pop temp 0
+goto if_label2_29bea9f318754e62a6197b56636d4470
+label if_label1_41b25449715047209622771ff9c9c32b
+label if_label2_29bea9f318754e62a6197b56636d4470
+// <-letStatement->
+push local 1
+push local 1
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 2
+add
+push argument 0
+push constant 2
+add
+sub
+add
+pop local 2
+// <-letStatement->
+push constant 0
+push local 2
+push constant 0
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 0
+push local 2
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push local 1
+push constant 1
+add
+pop pointer 1
+push that 0
+push argument 0
+push constant 2
+add
+sub
+push local 1
+push constant 1
+add
+pop pointer 1
+pop that 0
+// <-returnStatement->
+push local 2
+push constant 2
+add
+return
+// <-subroutineDec-> deAlloc
+function Memory.deAlloc 2
+// <-letStatement->
+push static 2
+pop local 0
+// <-letStatement->
+push constant 0
+pop local 1
+// <-whileStatement->
+label while_label1_97b79730a42d4a1cb87df56b085e221f
+push local 1
+not
+not
+if-goto while_label2_b22bcc9830474e7d9f47053271d09133
+// <-ifStatement->
+push local 0
+push constant 0
+eq
+not
+if-goto if_label1_dd5ac6b0aba8422191ce6f8eeb19fadf
+// <-letStatement->
+push argument 0
+push constant 2
+sub
+pop local 0
+// <-letStatement->
+push constant 1
+neg
+pop local 1
+goto if_label2_5f2b8ec19b7d4ceda41f4edd779feb05
+label if_label1_dd5ac6b0aba8422191ce6f8eeb19fadf
+label if_label2_5f2b8ec19b7d4ceda41f4edd779feb05
+// <-letStatement->
+push local 0
+push constant 0
+add
+pop pointer 1
+push that 0
+pop local 0
+goto while_label1_97b79730a42d4a1cb87df56b085e221f
+label while_label2_b22bcc9830474e7d9f47053271d09133
+// <-returnStatement->
+push constant 0
+return

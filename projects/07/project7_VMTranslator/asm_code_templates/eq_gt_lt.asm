@@ -1,0 +1,16 @@
+// _{%COMMAND%}_
+@SP
+M=M-1
+A=M
+D=M
+@SP
+A=M-1
+M=M-D
+@RTN_{%UUID%}_
+D=A
+@SP
+A=M
+M=D
+@EQ_GT_LT_ROUTINE__{%SYMBOL%}_
+0;JMP
+(RTN_{%UUID%}_)

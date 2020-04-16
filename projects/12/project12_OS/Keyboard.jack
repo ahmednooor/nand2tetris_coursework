@@ -1,0 +1,173 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Keyboard.jack
+
+/**
+ * A library for handling user input from the keyboard.
+ */
+class Keyboard {
+
+    /** Initializes the keyboard. */
+    function void init() {
+        return;
+    } 
+
+    /**
+     * Returns the character of the currently pressed key on the keyboard;
+     * if no key is currently pressed, returns 0.
+     *
+     * Recognizes all ASCII characters, as well as the following keys:
+     * new line = 128 = String.newline()
+     * backspace = 129 = String.backspace()
+     * left arrow = 130
+     * up arrow = 131
+     * right arrow = 132
+     * down arrow = 133
+     * home = 134
+     * End = 135
+     * page up = 136
+     * page down = 137
+     * insert = 138
+     * delete = 139
+     * ESC = 140
+     * F1 - F12 = 141 - 152
+     */
+    function char keyPressed() {
+        return Memory.peek(24576);
+    }
+
+    /**								
+     * Waits until a key is pressed on the keyboard and released,
+     * then echoes the key to the screen, and returns the character 
+     * of the pressed key.
+     */
+    function char readChar() {
+        var char c;
+        do Output.printChar(0);
+
+        while(Keyboard.keyPressed() = 0) {}
+
+        let c = Keyboard.keyPressed();
+        
+        while(~(Keyboard.keyPressed() = 0)) {}
+
+        do Output.backSpace();
+        do Output.printChar(c);
+        return c;
+    }
+
+    /**								
+     * Displays the message on the screen, reads from the keyboard the entered
+     * text until a newline character is detected, echoes the text to the screen,
+     * and returns its value. Also handles user backspaces.
+     */
+    function String readLine(String message) {
+        var char c;
+        var String str, newStr;
+        var int strCap, i;
+
+        let strCap = 1;
+        let str = String.new(strCap);
+        let newStr = str;
+
+        do Output.printString(message);
+
+        while (true) {
+            let c = Keyboard.readChar();
+
+            if (c = String.newLine()) {
+                do Output.println();
+                return str;
+            }
+            if (c = String.backSpace()) {
+                do str.eraseLastChar();
+                // do Output.backSpace();
+            }
+            else {
+                do str.appendChar(c);
+            }
+
+            if (str.length() = strCap) {
+                let strCap = strCap + strCap;
+                let newStr = String.new(strCap);
+                let i = 0;
+                while (i < str.length()) {
+                    do newStr.appendChar(str.charAt(i));
+                    let i = i + 1;
+                }
+                do str.dispose();
+                let str = newStr;
+            }
+        }
+
+        return str;
+    }   
+
+    /**								
+     * Displays the message on the screen, reads from the keyboard the entered
+     * text until a newline character is detected, echoes the text to the screen,
+     * and returns its integer value (until the first non-digit character in the
+     * entered text is detected). Also handles user backspaces. 
+     */
+    function int readInt(String message) {
+        var String str;
+        var int lastIntIndex, i, intToReturn, curInt;
+        var boolean isNeg;
+        
+        let str = Keyboard.readLine(message);
+        let lastIntIndex = str.length();
+        let isNeg = false;
+
+        if (lastIntIndex > 0) {
+            if (str.charAt(0) = 45) {
+                let isNeg = true;
+                do str.setCharAt(0, 48);
+            }
+            if (str.charAt(0) = 43) {
+                do str.setCharAt(0, 48);
+            }
+        }
+        
+        let i = 0;
+        while (i < lastIntIndex) {
+            if (~((str.charAt(i) > 47) & (str.charAt(i) < 59))) {
+                let lastIntIndex = i;
+            }
+            let i = i + 1;
+        }
+        
+        let lastIntIndex = lastIntIndex - 1;
+        let intToReturn = 0;
+        let i = 1;
+        while (lastIntIndex > -1) {
+            let curInt = Keyboard.getIntFromNumChar(str.charAt(lastIntIndex));
+            let intToReturn = intToReturn + (curInt * i);
+            let i = i * 10;
+            let lastIntIndex = lastIntIndex - 1;
+        }
+
+        if (isNeg) {
+            let intToReturn = -intToReturn;
+        }
+        do str.dispose();
+        return intToReturn;
+    }
+
+    /**								
+     * Get the actual integer version of the ascii numeric character
+     */
+    function int getIntFromNumChar(char c) {
+        if (c = 48) { return 0; }
+        if (c = 49) { return 1; }
+        if (c = 50) { return 2; }
+        if (c = 51) { return 3; }
+        if (c = 52) { return 4; }
+        if (c = 53) { return 5; }
+        if (c = 54) { return 6; }
+        if (c = 55) { return 7; }
+        if (c = 56) { return 8; }
+        if (c = 57) { return 9; }
+        return 0;
+    }
+}

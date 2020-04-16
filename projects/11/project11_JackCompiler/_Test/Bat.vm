@@ -1,0 +1,259 @@
+// <-subroutineDec-> new
+function Bat.new 0
+push constant 5
+call Memory.alloc 1
+pop pointer 0
+// <-letStatement->
+push argument 0
+pop this 0
+// <-letStatement->
+push argument 1
+pop this 1
+// <-letStatement->
+push argument 2
+pop this 2
+// <-letStatement->
+push argument 3
+pop this 3
+// <-letStatement->
+push constant 2
+pop this 4
+// <-doStatement->
+push pointer 0
+call Bat.show 1
+pop temp 0
+// <-returnStatement->
+push pointer 0
+return
+// <-subroutineDec-> dispose
+function Bat.dispose 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> show
+function Bat.show 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push constant 1
+neg
+call Screen.setColor 1
+pop temp 0
+// <-doStatement->
+push pointer 0
+call Bat.draw 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> hide
+function Bat.hide 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push constant 0
+call Screen.setColor 1
+pop temp 0
+// <-doStatement->
+push pointer 0
+call Bat.draw 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> draw
+function Bat.draw 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push this 0
+push this 1
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> setDirection
+function Bat.setDirection 0
+push argument 0
+pop pointer 0
+// <-letStatement->
+push argument 1
+pop this 4
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> getLeft
+function Bat.getLeft 0
+push argument 0
+pop pointer 0
+// <-returnStatement->
+push this 0
+return
+// <-subroutineDec-> getRight
+function Bat.getRight 0
+push argument 0
+pop pointer 0
+// <-returnStatement->
+push this 0
+push this 2
+add
+return
+// <-subroutineDec-> setWidth
+function Bat.setWidth 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push pointer 0
+call Bat.hide 1
+pop temp 0
+// <-letStatement->
+push argument 1
+pop this 2
+// <-doStatement->
+push pointer 0
+call Bat.show 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> move
+function Bat.move 0
+push argument 0
+pop pointer 0
+// <-ifStatement->
+push this 4
+push constant 1
+eq
+not
+if-goto if_label1_e309d096384f402f943f25eb3dad70a4
+// <-letStatement->
+push this 0
+push constant 4
+sub
+pop this 0
+// <-ifStatement->
+push this 0
+push constant 0
+lt
+not
+if-goto if_label1_16d2af4b98d649939de39174a66090a2
+// <-letStatement->
+push constant 0
+pop this 0
+goto if_label2_79a9ccf5058940fea11af0ed85861d79
+label if_label1_16d2af4b98d649939de39174a66090a2
+label if_label2_79a9ccf5058940fea11af0ed85861d79
+// <-doStatement->
+push constant 0
+call Screen.setColor 1
+pop temp 0
+// <-doStatement->
+push this 0
+push this 2
+add
+push constant 1
+add
+push this 1
+push this 0
+push this 2
+add
+push constant 4
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+// <-doStatement->
+push constant 1
+neg
+call Screen.setColor 1
+pop temp 0
+// <-doStatement->
+push this 0
+push this 1
+push this 0
+push constant 3
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+goto if_label2_1e1f0b040d4d46df8cc7180698a9b979
+label if_label1_e309d096384f402f943f25eb3dad70a4
+// <-letStatement->
+push this 0
+push constant 4
+add
+pop this 0
+// <-ifStatement->
+push this 0
+push this 2
+add
+push constant 511
+gt
+not
+if-goto if_label1_a58bbb516e3a4893ab5f0a4c9b11572a
+// <-letStatement->
+push constant 511
+push this 2
+sub
+pop this 0
+goto if_label2_587e6f04e1584d5ba2b01727631001ac
+label if_label1_a58bbb516e3a4893ab5f0a4c9b11572a
+label if_label2_587e6f04e1584d5ba2b01727631001ac
+// <-doStatement->
+push constant 0
+call Screen.setColor 1
+pop temp 0
+// <-doStatement->
+push this 0
+push constant 4
+sub
+push this 1
+push this 0
+push constant 1
+sub
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+// <-doStatement->
+push constant 1
+neg
+call Screen.setColor 1
+pop temp 0
+// <-doStatement->
+push this 0
+push this 2
+add
+push constant 3
+sub
+push this 1
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+label if_label2_1e1f0b040d4d46df8cc7180698a9b979
+// <-returnStatement->
+push constant 0
+return

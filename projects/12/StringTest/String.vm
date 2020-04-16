@@ -1,0 +1,520 @@
+// <-subroutineDec-> new
+function String.new 0
+push constant 2
+call Memory.alloc 1
+pop pointer 0
+// <-ifStatement->
+push argument 0
+push constant 0
+eq
+not
+if-goto if_label1_b5994ea3efbd425e9b24257a9519815f
+// <-letStatement->
+push constant 1
+pop argument 0
+goto if_label2_d86640a537124c55992201b71ed89631
+label if_label1_b5994ea3efbd425e9b24257a9519815f
+label if_label2_d86640a537124c55992201b71ed89631
+// <-letStatement->
+push argument 0
+call Array.new 1
+pop this 0
+// <-letStatement->
+push constant 0
+pop this 1
+// <-returnStatement->
+push pointer 0
+return
+// <-subroutineDec-> dispose
+function String.dispose 0
+push argument 0
+pop pointer 0
+// <-letStatement->
+push constant 0
+pop this 1
+// <-doStatement->
+push this 0
+call Array.dispose 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> length
+function String.length 0
+push argument 0
+pop pointer 0
+// <-returnStatement->
+push this 1
+return
+// <-subroutineDec-> charAt
+function String.charAt 0
+push argument 0
+pop pointer 0
+// <-returnStatement->
+push this 0
+push argument 1
+add
+pop pointer 1
+push that 0
+return
+// <-subroutineDec-> setCharAt
+function String.setCharAt 0
+push argument 0
+pop pointer 0
+// <-letStatement->
+push argument 2
+push this 0
+push argument 1
+add
+pop pointer 1
+pop that 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> appendChar
+function String.appendChar 0
+push argument 0
+pop pointer 0
+// <-letStatement->
+push argument 1
+push this 0
+push this 1
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push this 1
+push constant 1
+add
+pop this 1
+// <-returnStatement->
+push pointer 0
+return
+// <-subroutineDec-> eraseLastChar
+function String.eraseLastChar 0
+push argument 0
+pop pointer 0
+// <-letStatement->
+push this 1
+push constant 1
+sub
+pop this 1
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> intValue
+function String.intValue 6
+push argument 0
+pop pointer 0
+// <-letStatement->
+push pointer 0
+pop local 5
+// <-letStatement->
+push this 1
+pop local 0
+// <-letStatement->
+push constant 0
+pop local 4
+// <-ifStatement->
+push local 0
+push constant 0
+gt
+not
+if-goto if_label1_e97d69f99d7b44dab126aae8300fab19
+// <-ifStatement->
+push local 5
+push constant 0
+call String.charAt 2
+push constant 45
+eq
+not
+if-goto if_label1_200c6fec3434438695e933eeba4a3df1
+// <-letStatement->
+push constant 1
+neg
+pop local 4
+// <-doStatement->
+push local 5
+push constant 0
+push constant 48
+call String.setCharAt 3
+pop temp 0
+goto if_label2_d66fbd99bc5f42379ae325e231ca81df
+label if_label1_200c6fec3434438695e933eeba4a3df1
+label if_label2_d66fbd99bc5f42379ae325e231ca81df
+// <-ifStatement->
+push local 5
+push constant 0
+call String.charAt 2
+push constant 43
+eq
+not
+if-goto if_label1_8f07836783bd40f3ad9de7adfce65a83
+// <-doStatement->
+push local 5
+push constant 0
+push constant 48
+call String.setCharAt 3
+pop temp 0
+goto if_label2_cf9fc8e13dd340c1b2935eb2d24b5413
+label if_label1_8f07836783bd40f3ad9de7adfce65a83
+label if_label2_cf9fc8e13dd340c1b2935eb2d24b5413
+goto if_label2_9fc6acb51dea4169b5846b1daeadba35
+label if_label1_e97d69f99d7b44dab126aae8300fab19
+label if_label2_9fc6acb51dea4169b5846b1daeadba35
+// <-letStatement->
+push constant 0
+pop local 1
+// <-whileStatement->
+label while_label1_74a90c090e154cae9dce6c971c149191
+push local 1
+push local 0
+lt
+not
+if-goto while_label2_00819826fbb549bd9c5e9aa39c4693d6
+// <-ifStatement->
+push local 5
+push local 1
+call String.charAt 2
+push constant 47
+gt
+push local 5
+push local 1
+call String.charAt 2
+push constant 59
+lt
+and
+not
+not
+if-goto if_label1_b76218f6b95649c2b10d737e201b4403
+// <-letStatement->
+push local 1
+pop local 0
+goto if_label2_77b756017b0d46829d1ecbc6d2c309b8
+label if_label1_b76218f6b95649c2b10d737e201b4403
+label if_label2_77b756017b0d46829d1ecbc6d2c309b8
+// <-letStatement->
+push local 1
+push constant 1
+add
+pop local 1
+goto while_label1_74a90c090e154cae9dce6c971c149191
+label while_label2_00819826fbb549bd9c5e9aa39c4693d6
+// <-letStatement->
+push local 0
+push constant 1
+sub
+pop local 0
+// <-letStatement->
+push constant 0
+pop local 2
+// <-letStatement->
+push constant 1
+pop local 1
+// <-whileStatement->
+label while_label1_e904f2df48f4461faf48e31609d0e65b
+push local 0
+push constant 1
+neg
+gt
+not
+if-goto while_label2_bf286766b8ac4ba098d55e4c939e1552
+// <-letStatement->
+push local 5
+push local 0
+call String.charAt 2
+call String.getIntFromNumChar 1
+pop local 3
+// <-letStatement->
+push local 2
+push local 3
+push local 1
+call Math.multiply 2
+add
+pop local 2
+// <-letStatement->
+push local 1
+push constant 10
+call Math.multiply 2
+pop local 1
+// <-letStatement->
+push local 0
+push constant 1
+sub
+pop local 0
+goto while_label1_e904f2df48f4461faf48e31609d0e65b
+label while_label2_bf286766b8ac4ba098d55e4c939e1552
+// <-ifStatement->
+push local 4
+not
+if-goto if_label1_0feed0161ad14ac9ac880ff69f40de71
+// <-letStatement->
+push local 2
+neg
+pop local 2
+goto if_label2_d1a14d3296ef43309103bda4ad522de5
+label if_label1_0feed0161ad14ac9ac880ff69f40de71
+label if_label2_d1a14d3296ef43309103bda4ad522de5
+// <-returnStatement->
+push local 2
+return
+// <-subroutineDec-> getIntFromNumChar
+function String.getIntFromNumChar 0
+// <-ifStatement->
+push argument 0
+push constant 48
+eq
+not
+if-goto if_label1_66d4fbe0b48e4330ac0cb386c536b97a
+// <-returnStatement->
+push constant 0
+return
+goto if_label2_158eabe06df24f589f5c5741ec675389
+label if_label1_66d4fbe0b48e4330ac0cb386c536b97a
+label if_label2_158eabe06df24f589f5c5741ec675389
+// <-ifStatement->
+push argument 0
+push constant 49
+eq
+not
+if-goto if_label1_9328cb515ace404b9debc3da926c4421
+// <-returnStatement->
+push constant 1
+return
+goto if_label2_e6bc9d9345d7499a81b8916d01693ceb
+label if_label1_9328cb515ace404b9debc3da926c4421
+label if_label2_e6bc9d9345d7499a81b8916d01693ceb
+// <-ifStatement->
+push argument 0
+push constant 50
+eq
+not
+if-goto if_label1_dd44ac070a274a059e555999b377e8fd
+// <-returnStatement->
+push constant 2
+return
+goto if_label2_6bac356d1ad54f328dbb5ee40b7551bd
+label if_label1_dd44ac070a274a059e555999b377e8fd
+label if_label2_6bac356d1ad54f328dbb5ee40b7551bd
+// <-ifStatement->
+push argument 0
+push constant 51
+eq
+not
+if-goto if_label1_9434f4583db0443ca2cc7701a19dc1da
+// <-returnStatement->
+push constant 3
+return
+goto if_label2_c19d6a0b2d874ecaa022133a1ce8da2b
+label if_label1_9434f4583db0443ca2cc7701a19dc1da
+label if_label2_c19d6a0b2d874ecaa022133a1ce8da2b
+// <-ifStatement->
+push argument 0
+push constant 52
+eq
+not
+if-goto if_label1_a81cfed0758c496db690d52632de2bdb
+// <-returnStatement->
+push constant 4
+return
+goto if_label2_d7c926e8167d4945b07b3d73301be3a9
+label if_label1_a81cfed0758c496db690d52632de2bdb
+label if_label2_d7c926e8167d4945b07b3d73301be3a9
+// <-ifStatement->
+push argument 0
+push constant 53
+eq
+not
+if-goto if_label1_bab99defdb504829a027d5caa8258a07
+// <-returnStatement->
+push constant 5
+return
+goto if_label2_da74339a26354119a549f2bbc9b30b36
+label if_label1_bab99defdb504829a027d5caa8258a07
+label if_label2_da74339a26354119a549f2bbc9b30b36
+// <-ifStatement->
+push argument 0
+push constant 54
+eq
+not
+if-goto if_label1_37adda75ed90414993e4f8e1029dd116
+// <-returnStatement->
+push constant 6
+return
+goto if_label2_b6cd951f377f441ebbd3eaefe28691e2
+label if_label1_37adda75ed90414993e4f8e1029dd116
+label if_label2_b6cd951f377f441ebbd3eaefe28691e2
+// <-ifStatement->
+push argument 0
+push constant 55
+eq
+not
+if-goto if_label1_f7d226c8f90c4596ad404dbe7fcdc121
+// <-returnStatement->
+push constant 7
+return
+goto if_label2_287f12582d4646b7a31f000450195339
+label if_label1_f7d226c8f90c4596ad404dbe7fcdc121
+label if_label2_287f12582d4646b7a31f000450195339
+// <-ifStatement->
+push argument 0
+push constant 56
+eq
+not
+if-goto if_label1_43fbda6b59b24774999a2eef280a901f
+// <-returnStatement->
+push constant 8
+return
+goto if_label2_2fd92b52a6d9402a9dd0571698bdd704
+label if_label1_43fbda6b59b24774999a2eef280a901f
+label if_label2_2fd92b52a6d9402a9dd0571698bdd704
+// <-ifStatement->
+push argument 0
+push constant 57
+eq
+not
+if-goto if_label1_58de8f82d6174079be64eec887506d28
+// <-returnStatement->
+push constant 9
+return
+goto if_label2_a3958d123c5a4e87a67de35564b7ae20
+label if_label1_58de8f82d6174079be64eec887506d28
+label if_label2_a3958d123c5a4e87a67de35564b7ae20
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> setInt
+function String.setInt 4
+push argument 0
+pop pointer 0
+// <-letStatement->
+push pointer 0
+pop local 3
+// <-ifStatement->
+push argument 1
+push constant 0
+lt
+not
+if-goto if_label1_af4dda951a6f4678889e21b85928cc11
+// <-letStatement->
+push constant 1
+neg
+pop local 2
+// <-letStatement->
+push argument 1
+neg
+pop argument 1
+goto if_label2_5c9a9f609a0e440a95a16cea71831e7d
+label if_label1_af4dda951a6f4678889e21b85928cc11
+label if_label2_5c9a9f609a0e440a95a16cea71831e7d
+// <-letStatement->
+push constant 6
+call Array.new 1
+pop local 0
+// <-letStatement->
+push constant 1
+neg
+pop local 1
+// <-whileStatement->
+label while_label1_ce7202e0cfbd4740b40f74f39ea8e543
+push argument 1
+push constant 0
+eq
+not
+not
+if-goto while_label2_ccd37969ea5c40fd82e3a18dba10841b
+// <-letStatement->
+push local 1
+push constant 1
+add
+pop local 1
+// <-letStatement->
+push constant 48
+push argument 1
+push argument 1
+push constant 10
+call Math.divide 2
+push constant 10
+call Math.multiply 2
+sub
+add
+push local 0
+push local 1
+add
+pop pointer 1
+pop that 0
+// <-letStatement->
+push argument 1
+push constant 10
+call Math.divide 2
+pop argument 1
+goto while_label1_ce7202e0cfbd4740b40f74f39ea8e543
+label while_label2_ccd37969ea5c40fd82e3a18dba10841b
+// <-ifStatement->
+push local 2
+not
+if-goto if_label1_e883f4cd7dcc43cfb00b6701f2c4d78b
+// <-letStatement->
+push local 1
+push constant 1
+add
+pop local 1
+// <-letStatement->
+push constant 45
+push local 0
+push local 1
+add
+pop pointer 1
+pop that 0
+goto if_label2_3a6e513fcdb04bd38f7af3d9b8855b38
+label if_label1_e883f4cd7dcc43cfb00b6701f2c4d78b
+label if_label2_3a6e513fcdb04bd38f7af3d9b8855b38
+// <-letStatement->
+push constant 0
+pop this 1
+// <-whileStatement->
+label while_label1_46689b4a95d34bada1be98fb033fda75
+push local 1
+push constant 1
+neg
+gt
+not
+if-goto while_label2_53a0d38c7916477c99dc4c451ac43630
+// <-doStatement->
+push local 3
+push local 0
+push local 1
+add
+pop pointer 1
+push that 0
+call String.appendChar 2
+pop temp 0
+// <-letStatement->
+push local 1
+push constant 1
+sub
+pop local 1
+goto while_label1_46689b4a95d34bada1be98fb033fda75
+label while_label2_53a0d38c7916477c99dc4c451ac43630
+// <-doStatement->
+push local 0
+call Array.dispose 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> newLine
+function String.newLine 0
+// <-returnStatement->
+push constant 128
+return
+// <-subroutineDec-> backSpace
+function String.backSpace 0
+// <-returnStatement->
+push constant 129
+return
+// <-subroutineDec-> doubleQuote
+function String.doubleQuote 0
+// <-returnStatement->
+push constant 34
+return

@@ -1,0 +1,539 @@
+// <-subroutineDec-> new
+function Ball.new 0
+push constant 15
+call Memory.alloc 1
+pop pointer 0
+// <-letStatement->
+push argument 0
+pop this 0
+// <-letStatement->
+push argument 1
+pop this 1
+// <-letStatement->
+push argument 2
+pop this 10
+// <-letStatement->
+push argument 3
+push constant 6
+sub
+pop this 11
+// <-letStatement->
+push argument 4
+pop this 12
+// <-letStatement->
+push argument 5
+push constant 6
+sub
+pop this 13
+// <-letStatement->
+push constant 0
+pop this 14
+// <-doStatement->
+push pointer 0
+call Ball.show 1
+pop temp 0
+// <-returnStatement->
+push pointer 0
+return
+// <-subroutineDec-> dispose
+function Ball.dispose 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> show
+function Ball.show 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push constant 1
+neg
+call Screen.setColor 1
+pop temp 0
+// <-doStatement->
+push pointer 0
+call Ball.draw 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> hide
+function Ball.hide 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push constant 0
+call Screen.setColor 1
+pop temp 0
+// <-doStatement->
+push pointer 0
+call Ball.draw 1
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> draw
+function Ball.draw 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push this 0
+push this 1
+push this 0
+push constant 5
+add
+push this 1
+push constant 5
+add
+call Screen.drawRectangle 4
+pop temp 0
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> getLeft
+function Ball.getLeft 0
+push argument 0
+pop pointer 0
+// <-returnStatement->
+push this 0
+return
+// <-subroutineDec-> getRight
+function Ball.getRight 0
+push argument 0
+pop pointer 0
+// <-returnStatement->
+push this 0
+push constant 5
+add
+return
+// <-subroutineDec-> setDestination
+function Ball.setDestination 3
+push argument 0
+pop pointer 0
+// <-letStatement->
+push argument 1
+push this 0
+sub
+pop this 2
+// <-letStatement->
+push argument 2
+push this 1
+sub
+pop this 3
+// <-letStatement->
+push this 2
+call Math.abs 1
+pop local 0
+// <-letStatement->
+push this 3
+call Math.abs 1
+pop local 1
+// <-letStatement->
+push local 0
+push local 1
+lt
+pop this 7
+// <-ifStatement->
+push this 7
+not
+if-goto if_label1_f977b6c855874c2daf75b59ed8b41cc9
+// <-letStatement->
+push local 0
+pop local 2
+// <-letStatement->
+push local 1
+pop local 0
+// <-letStatement->
+push local 2
+pop local 1
+// <-letStatement->
+push this 1
+push argument 2
+lt
+pop this 8
+// <-letStatement->
+push this 0
+push argument 1
+lt
+pop this 9
+goto if_label2_967d41698aee405b98aa1e8ac726590c
+label if_label1_f977b6c855874c2daf75b59ed8b41cc9
+// <-letStatement->
+push this 0
+push argument 1
+lt
+pop this 8
+// <-letStatement->
+push this 1
+push argument 2
+lt
+pop this 9
+label if_label2_967d41698aee405b98aa1e8ac726590c
+// <-letStatement->
+push constant 2
+push local 1
+call Math.multiply 2
+push local 0
+sub
+pop this 4
+// <-letStatement->
+push constant 2
+push local 1
+call Math.multiply 2
+pop this 5
+// <-letStatement->
+push constant 2
+push local 1
+push local 0
+sub
+call Math.multiply 2
+pop this 6
+// <-returnStatement->
+push constant 0
+return
+// <-subroutineDec-> move
+function Ball.move 0
+push argument 0
+pop pointer 0
+// <-doStatement->
+push pointer 0
+call Ball.hide 1
+pop temp 0
+// <-ifStatement->
+push this 4
+push constant 0
+lt
+not
+if-goto if_label1_69b6cd1861f24f89a3e561fe966eb664
+// <-letStatement->
+push this 4
+push this 5
+add
+pop this 4
+goto if_label2_a9016dfca5bc4e259d29b13c4e3b736a
+label if_label1_69b6cd1861f24f89a3e561fe966eb664
+// <-letStatement->
+push this 4
+push this 6
+add
+pop this 4
+// <-ifStatement->
+push this 9
+not
+if-goto if_label1_0ab60f1d5cd648c483fd9fd19b131a82
+// <-ifStatement->
+push this 7
+not
+if-goto if_label1_d50fe52b55ad4a0c906153638cd95542
+// <-letStatement->
+push this 0
+push constant 4
+add
+pop this 0
+goto if_label2_8e6d01157697405bba7bc936c3f3e243
+label if_label1_d50fe52b55ad4a0c906153638cd95542
+// <-letStatement->
+push this 1
+push constant 4
+add
+pop this 1
+label if_label2_8e6d01157697405bba7bc936c3f3e243
+goto if_label2_398cafebee374f31ab146ffbb29deec1
+label if_label1_0ab60f1d5cd648c483fd9fd19b131a82
+// <-ifStatement->
+push this 7
+not
+if-goto if_label1_432cee0b063b4e06be2f43ce35ca217d
+// <-letStatement->
+push this 0
+push constant 4
+sub
+pop this 0
+goto if_label2_b1f75b4bdd674b39ac70150775fb5b72
+label if_label1_432cee0b063b4e06be2f43ce35ca217d
+// <-letStatement->
+push this 1
+push constant 4
+sub
+pop this 1
+label if_label2_b1f75b4bdd674b39ac70150775fb5b72
+label if_label2_398cafebee374f31ab146ffbb29deec1
+label if_label2_a9016dfca5bc4e259d29b13c4e3b736a
+// <-ifStatement->
+push this 8
+not
+if-goto if_label1_10aa1c6b183841b1aafd502aef552c77
+// <-ifStatement->
+push this 7
+not
+if-goto if_label1_b942bc2c0ac647889840192fc6d67437
+// <-letStatement->
+push this 1
+push constant 4
+add
+pop this 1
+goto if_label2_ac018433ac7648928b3c7562941fd88e
+label if_label1_b942bc2c0ac647889840192fc6d67437
+// <-letStatement->
+push this 0
+push constant 4
+add
+pop this 0
+label if_label2_ac018433ac7648928b3c7562941fd88e
+goto if_label2_9693493a3cc046bcaffe8a5378ee31a8
+label if_label1_10aa1c6b183841b1aafd502aef552c77
+// <-ifStatement->
+push this 7
+not
+if-goto if_label1_0944b6a9d8ad4b639b9e6dd28dff1e65
+// <-letStatement->
+push this 1
+push constant 4
+sub
+pop this 1
+goto if_label2_4c40072bc23f4a828796ae8aa2e96060
+label if_label1_0944b6a9d8ad4b639b9e6dd28dff1e65
+// <-letStatement->
+push this 0
+push constant 4
+sub
+pop this 0
+label if_label2_4c40072bc23f4a828796ae8aa2e96060
+label if_label2_9693493a3cc046bcaffe8a5378ee31a8
+// <-ifStatement->
+push this 0
+push this 10
+gt
+not
+not
+if-goto if_label1_2f423b6a2b4c42fda272bc81781dbe13
+// <-letStatement->
+push constant 1
+pop this 14
+// <-letStatement->
+push this 10
+pop this 0
+goto if_label2_83d81d030d8b4b269ec91dd87598e731
+label if_label1_2f423b6a2b4c42fda272bc81781dbe13
+label if_label2_83d81d030d8b4b269ec91dd87598e731
+// <-ifStatement->
+push this 0
+push this 11
+lt
+not
+not
+if-goto if_label1_5237462e667e482c8fe9dd63abe04b61
+// <-letStatement->
+push constant 2
+pop this 14
+// <-letStatement->
+push this 11
+pop this 0
+goto if_label2_833c5d254464468f9c8fead5a212f900
+label if_label1_5237462e667e482c8fe9dd63abe04b61
+label if_label2_833c5d254464468f9c8fead5a212f900
+// <-ifStatement->
+push this 1
+push this 12
+gt
+not
+not
+if-goto if_label1_41fe8d17595b4935a15f42af67a61bc3
+// <-letStatement->
+push constant 3
+pop this 14
+// <-letStatement->
+push this 12
+pop this 1
+goto if_label2_6c0babef654e480fb735c3f112cf85e3
+label if_label1_41fe8d17595b4935a15f42af67a61bc3
+label if_label2_6c0babef654e480fb735c3f112cf85e3
+// <-ifStatement->
+push this 1
+push this 13
+lt
+not
+not
+if-goto if_label1_677d6fcefc054095af2c73cf570ea581
+// <-letStatement->
+push constant 4
+pop this 14
+// <-letStatement->
+push this 13
+pop this 1
+goto if_label2_562ead01d3a44a5e9435cd226880deb2
+label if_label1_677d6fcefc054095af2c73cf570ea581
+label if_label2_562ead01d3a44a5e9435cd226880deb2
+// <-doStatement->
+push pointer 0
+call Ball.show 1
+pop temp 0
+// <-returnStatement->
+push this 14
+return
+// <-subroutineDec-> bounce
+function Ball.bounce 5
+push argument 0
+pop pointer 0
+// <-letStatement->
+push this 2
+push constant 10
+call Math.divide 2
+pop local 2
+// <-letStatement->
+push this 3
+push constant 10
+call Math.divide 2
+pop local 3
+// <-ifStatement->
+push argument 1
+push constant 0
+eq
+not
+if-goto if_label1_cd11c661f53a4a2d83e258e2b7a8df09
+// <-letStatement->
+push constant 10
+pop local 4
+goto if_label2_50394ac3570343bd9762294802505fcc
+label if_label1_cd11c661f53a4a2d83e258e2b7a8df09
+// <-ifStatement->
+push this 2
+push constant 0
+lt
+not
+push argument 1
+push constant 1
+eq
+and
+push this 2
+push constant 0
+lt
+push argument 1
+push constant 1
+neg
+eq
+and
+or
+not
+if-goto if_label1_15b21ff39ab14733a3d9d209e171b94d
+// <-letStatement->
+push constant 20
+pop local 4
+goto if_label2_2e468fe27b084b10b69a6c30e91f4663
+label if_label1_15b21ff39ab14733a3d9d209e171b94d
+// <-letStatement->
+push constant 5
+pop local 4
+label if_label2_2e468fe27b084b10b69a6c30e91f4663
+label if_label2_50394ac3570343bd9762294802505fcc
+// <-ifStatement->
+push this 14
+push constant 1
+eq
+not
+if-goto if_label1_63e01fae594c41e8bcd0103250533dcf
+// <-letStatement->
+push constant 506
+pop local 0
+// <-letStatement->
+push local 3
+push constant 50
+neg
+call Math.multiply 2
+push local 2
+call Math.divide 2
+pop local 1
+// <-letStatement->
+push this 1
+push local 1
+push local 4
+call Math.multiply 2
+add
+pop local 1
+goto if_label2_be5632a4f8174445a157acb73b05295a
+label if_label1_63e01fae594c41e8bcd0103250533dcf
+// <-ifStatement->
+push this 14
+push constant 2
+eq
+not
+if-goto if_label1_c8c25209fb184cd09b8d535617374c6f
+// <-letStatement->
+push constant 0
+pop local 0
+// <-letStatement->
+push local 3
+push constant 50
+call Math.multiply 2
+push local 2
+call Math.divide 2
+pop local 1
+// <-letStatement->
+push this 1
+push local 1
+push local 4
+call Math.multiply 2
+add
+pop local 1
+goto if_label2_3727e3bd87d94f1491690ba2b8469d17
+label if_label1_c8c25209fb184cd09b8d535617374c6f
+// <-ifStatement->
+push this 14
+push constant 3
+eq
+not
+if-goto if_label1_fce31671e5e44b6e826300db249eabe0
+// <-letStatement->
+push constant 250
+pop local 1
+// <-letStatement->
+push local 2
+push constant 25
+neg
+call Math.multiply 2
+push local 3
+call Math.divide 2
+pop local 0
+// <-letStatement->
+push this 0
+push local 0
+push local 4
+call Math.multiply 2
+add
+pop local 0
+goto if_label2_9e5f9999051f41c7b629c2f203c25c2c
+label if_label1_fce31671e5e44b6e826300db249eabe0
+// <-letStatement->
+push constant 0
+pop local 1
+// <-letStatement->
+push local 2
+push constant 25
+call Math.multiply 2
+push local 3
+call Math.divide 2
+pop local 0
+// <-letStatement->
+push this 0
+push local 0
+push local 4
+call Math.multiply 2
+add
+pop local 0
+label if_label2_9e5f9999051f41c7b629c2f203c25c2c
+label if_label2_3727e3bd87d94f1491690ba2b8469d17
+label if_label2_be5632a4f8174445a157acb73b05295a
+// <-doStatement->
+push pointer 0
+push local 0
+push local 1
+call Ball.setDestination 3
+pop temp 0
+// <-returnStatement->
+push constant 0
+return

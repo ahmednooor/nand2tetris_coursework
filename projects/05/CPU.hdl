@@ -40,4 +40,64 @@ CHIP CPU {
 
     PARTS:
     // Put your code here:
+
+    // first mux
+    Mux16(a=instruction, b=aluOut, sel=instruction[15], out=firstMuxOut);
+
+    // A register load bit
+    And(a=instruction[5], b=instruction[15], out=aLoadTemp1);
+    Not(in=instruction[15], out=aLoadTemp2);
+    Or(a=aLoadTemp1, b=aLoadTemp2, out=aLoadBit);
+    // A register
+    ARegister(in=firstMuxOut, load=aLoadBit, out=aRegisterOut, out[0..14]=addressM);
+
+    // D register load bit
+    And(a=instruction[4], b=instruction[15], out=dLoadBit);
+    // D register
+    DRegister(in=aluOut, load=dLoadBit, out=dRegisterOut);
+
+    // second mux
+    Mux16(a=aRegisterOut, b=inM, sel=instruction[12], out=secondMuxOut);
+
+    // ALU
+    ALU(x=dRegisterOut, y=secondMuxOut, 
+        zx=instruction[11], nx=instruction[10], 
+        zy=instruction[9], ny=instruction[8], 
+        f=instruction[7], no=instruction[6], 
+        out=aluOut, out=outM,
+        zr=zr, ng=ng);
+
+    // jump instruction logic and PC load bit
+    Not(in=zr, out=notZr);
+    Not(in=ng, out=notNg);
+    // >0
+    And3In1Out(a=instruction[0], b=notZr, c=notNg, out=JGT);
+    // =0
+    And(a=instruction[1], b=zr, out=JEQ);
+    // >=0
+    Or(a=zr, b=notNg, out=zrOrNotNg);
+    And3In1Out(a=zrOrNotNg, b=instruction[1], c=instruction[0], out=JGE);
+    // <0
+    And(a=instruction[2], b=ng, out=JLT);
+    // unconditional jump
+    And3In1Out(a=instruction[0], b=instruction[1], c=instruction[2], out=JMP);
+    // !=0
+    And3In1Out(a=instruction[0], b=instruction[2], c=notZr, out=JNE);
+    // <=0
+    Or(a=ng, b=zr, out=ngOrZr);
+    And3In1Out(a=ngOrZr, b=instruction[2], c=instruction[1], out=JLE);
+
+    // PC load bit
+    Or8Way(
+        in[0]=JGT, in[1]=JEQ, in[2]=JGE, in[3]=JLT, 
+        in[4]=JMP, in[5]=JNE, in[6]=JLE, in[7]=false,
+        out=isJumpOn);
+    And(a=instruction[15], b=isJumpOn, out=PCloadBit);
+    
+    // PC Program Counter
+    PC(in=aRegisterOut, load=PCloadBit, inc=true, reset=reset, out[0..14]=pc);
+
+    // writeM
+    And(a=instruction[3], b=instruction[15], out=writeM);
+
 }

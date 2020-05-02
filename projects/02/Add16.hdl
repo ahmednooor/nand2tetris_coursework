@@ -13,5 +13,6 @@ CHIP Add16 {
     OUT out[16];
 
     PARTS:
-   // Put you code here:
+    // Put you code here:
+    CustomFullAdder16Bit(a=a, b=b, initialcarry=false, sum=out, finalcarry=false);
 }

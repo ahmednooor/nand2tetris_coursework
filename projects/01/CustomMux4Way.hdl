@@ -1,0 +1,21 @@
+// to ease the processing in Mux4Way... and Mux8way...
+CHIP CustomMux4Way {
+    IN a, b, c, d, sel[2];
+    OUT out;
+
+    PARTS:
+    Not(in=sel[0], out=notSel0);
+    Not(in=sel[1], out=notSel1);
+
+    And(a=notSel0, b=notSel1, out=notSel0AndNotSel1);
+    And(a=notSel1, b=sel[0], out=notSel0AndSel1);
+    And(a=sel[1], b=notSel0, out=sel0AndNotSel1);
+    And(a=sel[0], b=sel[1], out=sel0AndSel1);
+
+    And(a=a, b=notSel0AndNotSel1, out=aAndNotSel0AndNotSel1);
+    And(a=b, b=notSel0AndSel1, out=bAndNotSel0AndSel1);
+    And(a=c, b=sel0AndNotSel1, out=cAndSel0AndNotSel1);
+    And(a=d, b=sel0AndSel1, out=dAndSel0AndSel1);
+
+    CustomOr4In(a=aAndNotSel0AndNotSel1, b=bAndNotSel0AndSel1, c=cAndSel0AndNotSel1, d=dAndSel0AndSel1, out=out);
+}

@@ -1,0 +1,32 @@
+// to ease the processing in Mux8way...
+CHIP CustomMux8Way {
+    IN a, b, c, d,
+       e, f, g, h,
+       sel[3];
+    OUT out;
+
+    PARTS:
+    Not(in=sel[0], out=notSel0);
+    Not(in=sel[1], out=notSel1);
+    Not(in=sel[2], out=notSel2);
+
+    CustomAnd3In(a=notSel0, b=notSel1, c=notSel2, out=and3in1);
+    CustomAnd3In(a=sel[0], b=notSel1, c=notSel2, out=and3in2);
+    CustomAnd3In(a=notSel0, b=sel[1], c=notSel2, out=and3in3);
+    CustomAnd3In(a=sel[0], b=sel[1], c=notSel2, out=and3in4);
+    CustomAnd3In(a=notSel0, b=notSel1, c=sel[2], out=and3in5);
+    CustomAnd3In(a=sel[0], b=notSel1, c=sel[2], out=and3in6);
+    CustomAnd3In(a=notSel0, b=sel[1], c=sel[2], out=and3in7);
+    CustomAnd3In(a=sel[0], b=sel[1], c=sel[2], out=and3in8);
+
+    And(a=and3in1, b=a, out=anda);
+    And(a=and3in2, b=b, out=andb);
+    And(a=and3in3, b=c, out=andc);
+    And(a=and3in4, b=d, out=andd);
+    And(a=and3in5, b=e, out=ande);
+    And(a=and3in6, b=f, out=andf);
+    And(a=and3in7, b=g, out=andg);
+    And(a=and3in8, b=h, out=andh);
+
+    CustomOr8In(a=anda, b=andb, c=andc, d=andd, e=ande, f=andf, g=andg, h=andh, out=out);
+}

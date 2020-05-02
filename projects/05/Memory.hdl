@@ -28,4 +28,38 @@ CHIP Memory {
 
     PARTS:
     // Put your code here:
+
+    Not16(in[0..14]=address, in[15]=false, out=notAddr);
+
+    // make sure the keyboard bit isn't selected. if it is, then load bit is 0
+    And16(
+        a[0]=false, 
+        a[1]=false, 
+        a[2]=false, 
+        a[3]=false, 
+        a[4]=false, 
+        a[5]=false, 
+        a[6]=false, 
+        a[7]=false, 
+        a[8]=false, 
+        a[9]=false, 
+        a[10]=false, 
+        a[11]=false, 
+        a[12]=false, 
+        a[13]=true, 
+        a[14]=true, 
+        a[15]=false, 
+        b=notAddr, out=isItKeyboard1);
+    Not16(in=isItKeyboard1, out=isItKeyboard2);
+    Custom16BitFullAdder(a=isItKeyboard2, b=false, initialcarry=true, sum=false, finalcarry=isItKeyboard);
+    Not(in=isItKeyboard, out=notKeyboard);
+    And(a=notKeyboard, b=load, out=isLoadOn);
+
+    DMux(in=isLoadOn, sel=address[14], a=ramLoadBit, b=screenLoadBit);
+
+    RAM16K(in=in, load=ramLoadBit, address=address[0..13], out=ramOut);
+    Screen(in=in, load=screenLoadBit, address=address[0..12], out=screenOut);
+    Keyboard(out=keyboardOut);
+
+    Mux4Way16(a=ramOut, b=ramOut, c=screenOut, d=keyboardOut, sel=address[13..14], out=out);
 }

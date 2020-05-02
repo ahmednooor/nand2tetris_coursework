@@ -1,0 +1,9 @@
+// to ease the processing in CustomMux4Way for Mux8way...
+CHIP CustomAnd3In {
+    IN a, b, c;
+    OUT out;
+
+    PARTS:
+    And(a=a, b=b, out=aAndB);
+    And(a=aAndB, b=c, out=out);
+}

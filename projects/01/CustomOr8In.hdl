@@ -1,0 +1,14 @@
+// to ease the processing in CustomMux8Way for Mux8way...
+CHIP CustomOr8In {
+    IN a, b, c, d, e, f, g, h;
+    OUT out;
+
+    PARTS:
+    Or(a=a, b=b, out=aOrB);
+    Or(a=c, b=d, out=cOrD);
+    Or(a=e, b=f, out=eOrF);
+    Or(a=g, b=h, out=gOrH);
+    Or(a=aOrB, b=cOrD, out=aOrBOrCOrD);
+    Or(a=eOrF, b=gOrH, out=eOrFOrGOrH);
+    Or(a=aOrBOrCOrD, b=eOrFOrGOrH, out=out);
+}

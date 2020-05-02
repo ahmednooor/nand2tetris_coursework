@@ -17,4 +17,50 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+    Not(in=load, out=notload);
+    And(a=inc, b=notload, out=incandnotload);
+    Mux16(a=in, b=adderout, sel=incandnotload, out=muxout);
+
+    Not(in=reset, out=notreset);
+    And16(
+        a[0]=notreset,
+        a[1]=notreset,
+        a[2]=notreset,
+        a[3]=notreset,
+        a[4]=notreset,
+        a[5]=notreset,
+        a[6]=notreset,
+        a[7]=notreset,
+        a[8]=notreset,
+        a[9]=notreset,
+        a[10]=notreset,
+        a[11]=notreset,
+        a[12]=notreset,
+        a[13]=notreset,
+        a[14]=notreset,
+        a[15]=notreset,
+        b=muxout, out=and16out);
+
+    Or(a=inc, b=load, out=incorload);
+    Or(a=reset, b=incorload, out=resetorincorload);
+    Register(in=and16out, load=resetorincorload, out=registerout, out=out);
+
+    Custom16BitFullAdder(a=registerout,
+        b[0]=true, 
+        b[1]=false, 
+        b[2]=false, 
+        b[3]=false, 
+        b[4]=false, 
+        b[5]=false, 
+        b[6]=false, 
+        b[7]=false, 
+        b[8]=false, 
+        b[9]=false, 
+        b[10]=false, 
+        b[11]=false, 
+        b[12]=false, 
+        b[13]=false, 
+        b[14]=false, 
+        b[15]=false, 
+        initialcarry=false, sum=adderout, finalcarry=false);
 }

@@ -40,7 +40,136 @@ CHIP ALU {
         out[16], // 16-bit output
         zr, // 1 if (out == 0), 0 otherwise
         ng; // 1 if (out < 0),  0 otherwise
-
     PARTS:
-   // Put you code here:
+    // Put you code here:
+
+    // zx
+    Not(in=zx, out=notZx);
+    And(a=notZx, b=x[0], out=zxout0);
+    And(a=notZx, b=x[1], out=zxout1);
+    And(a=notZx, b=x[2], out=zxout2);
+    And(a=notZx, b=x[3], out=zxout3);
+    And(a=notZx, b=x[4], out=zxout4);
+    And(a=notZx, b=x[5], out=zxout5);
+    And(a=notZx, b=x[6], out=zxout6);
+    And(a=notZx, b=x[7], out=zxout7);
+    And(a=notZx, b=x[8], out=zxout8);
+    And(a=notZx, b=x[9], out=zxout9);
+    And(a=notZx, b=x[10], out=zxout10);
+    And(a=notZx, b=x[11], out=zxout11);
+    And(a=notZx, b=x[12], out=zxout12);
+    And(a=notZx, b=x[13], out=zxout13);
+    And(a=notZx, b=x[14], out=zxout14);
+    And(a=notZx, b=x[15], out=zxout15);
+
+    // nx
+    Xor(a=nx, b=zxout0, out=nxout0);
+    Xor(a=nx, b=zxout1, out=nxout1);
+    Xor(a=nx, b=zxout2, out=nxout2);
+    Xor(a=nx, b=zxout3, out=nxout3);
+    Xor(a=nx, b=zxout4, out=nxout4);
+    Xor(a=nx, b=zxout5, out=nxout5);
+    Xor(a=nx, b=zxout6, out=nxout6);
+    Xor(a=nx, b=zxout7, out=nxout7);
+    Xor(a=nx, b=zxout8, out=nxout8);
+    Xor(a=nx, b=zxout9, out=nxout9);
+    Xor(a=nx, b=zxout10, out=nxout10);
+    Xor(a=nx, b=zxout11, out=nxout11);
+    Xor(a=nx, b=zxout12, out=nxout12);
+    Xor(a=nx, b=zxout13, out=nxout13);
+    Xor(a=nx, b=zxout14, out=nxout14);
+    Xor(a=nx, b=zxout15, out=nxout15);
+
+    // zy
+    Not(in=zy, out=notZy);
+    And(a=notZy, b=y[0], out=zyout0);
+    And(a=notZy, b=y[1], out=zyout1);
+    And(a=notZy, b=y[2], out=zyout2);
+    And(a=notZy, b=y[3], out=zyout3);
+    And(a=notZy, b=y[4], out=zyout4);
+    And(a=notZy, b=y[5], out=zyout5);
+    And(a=notZy, b=y[6], out=zyout6);
+    And(a=notZy, b=y[7], out=zyout7);
+    And(a=notZy, b=y[8], out=zyout8);
+    And(a=notZy, b=y[9], out=zyout9);
+    And(a=notZy, b=y[10], out=zyout10);
+    And(a=notZy, b=y[11], out=zyout11);
+    And(a=notZy, b=y[12], out=zyout12);
+    And(a=notZy, b=y[13], out=zyout13);
+    And(a=notZy, b=y[14], out=zyout14);
+    And(a=notZy, b=y[15], out=zyout15);
+
+    // ny
+    Xor(a=ny, b=zyout0, out=nyout0);
+    Xor(a=ny, b=zyout1, out=nyout1);
+    Xor(a=ny, b=zyout2, out=nyout2);
+    Xor(a=ny, b=zyout3, out=nyout3);
+    Xor(a=ny, b=zyout4, out=nyout4);
+    Xor(a=ny, b=zyout5, out=nyout5);
+    Xor(a=ny, b=zyout6, out=nyout6);
+    Xor(a=ny, b=zyout7, out=nyout7);
+    Xor(a=ny, b=zyout8, out=nyout8);
+    Xor(a=ny, b=zyout9, out=nyout9);
+    Xor(a=ny, b=zyout10, out=nyout10);
+    Xor(a=ny, b=zyout11, out=nyout11);
+    Xor(a=ny, b=zyout12, out=nyout12);
+    Xor(a=ny, b=zyout13, out=nyout13);
+    Xor(a=ny, b=zyout14, out=nyout14);
+    Xor(a=ny, b=zyout15, out=nyout15);
+
+    // x+y
+    CustomFullAdder16Bit(
+        a[0]=nxout0, b[0]=nyout0, 
+        a[1]=nxout1, b[1]=nyout1, 
+        a[2]=nxout2, b[2]=nyout2, 
+        a[3]=nxout3, b[3]=nyout3, 
+        a[4]=nxout4, b[4]=nyout4, 
+        a[5]=nxout5, b[5]=nyout5, 
+        a[6]=nxout6, b[6]=nyout6, 
+        a[7]=nxout7, b[7]=nyout7, 
+        a[8]=nxout8, b[8]=nyout8, 
+        a[9]=nxout9, b[9]=nyout9, 
+        a[10]=nxout10, b[10]=nyout10, 
+        a[11]=nxout11, b[11]=nyout11, 
+        a[12]=nxout12, b[12]=nyout12, 
+        a[13]=nxout13, b[13]=nyout13, 
+        a[14]=nxout14, b[14]=nyout14, 
+        a[15]=nxout15, b[15]=nyout15, 
+        initialcarry=false, sum=xPlusY, finalcarry=false);
+
+    // x&y
+    Custom16BitAnd(
+        x[0]=nxout0, y[0]=nyout0, 
+        x[1]=nxout1, y[1]=nyout1, 
+        x[2]=nxout2, y[2]=nyout2, 
+        x[3]=nxout3, y[3]=nyout3, 
+        x[4]=nxout4, y[4]=nyout4, 
+        x[5]=nxout5, y[5]=nyout5, 
+        x[6]=nxout6, y[6]=nyout6, 
+        x[7]=nxout7, y[7]=nyout7, 
+        x[8]=nxout8, y[8]=nyout8, 
+        x[9]=nxout9, y[9]=nyout9, 
+        x[10]=nxout10, y[10]=nyout10, 
+        x[11]=nxout11, y[11]=nyout11, 
+        x[12]=nxout12, y[12]=nyout12, 
+        x[13]=nxout13, y[13]=nyout13, 
+        x[14]=nxout14, y[14]=nyout14, 
+        x[15]=nxout15, y[15]=nyout15, 
+        out=xAndY);
+
+    // f
+    Mux16(a=xAndY, b=xPlusY, sel=f, out=fmuxout);
+
+    // no
+    CustomXor1Against16Bit(a=no, b=fmuxout, out=noout);
+
+    // zr
+    CustomOr16Way(in=noout, out=ornoout);
+    Not(in=ornoout, out=zr);
+
+    // ng
+    CustomReturnSignBit(in=noout, out=ng);
+
+    // out
+    Custom16BitAnd(x=noout, y=noout, out=out);
 }

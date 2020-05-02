@@ -1,0 +1,10 @@
+// to ease the processing in CustomMux4Way for Mux4Way... and Mux8way...
+CHIP CustomOr4In {
+    IN a, b, c, d;
+    OUT out;
+
+    PARTS:
+    Or(a=a, b=b, out=aOrB);
+    Or(a=c, b=d, out=cOrD);
+    Or(a=aOrB, b=cOrD, out=out);
+}
